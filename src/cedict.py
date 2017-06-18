@@ -90,7 +90,7 @@ class CedictWord:
       if def_.startswith('CL:'):
         pieces = def_.split(':', 2)[1].split(',')
         clfrs = [CedictClassifier.parse(piece) for piece in pieces]
-      elif def_.startswith('Taiwan pr. '):
+      elif def_.startswith('Taiwan pr. ['):
         tw_pinyin = def_.split('[')[1].rstrip(']')
       else:
         actual_defs.append(def_)
