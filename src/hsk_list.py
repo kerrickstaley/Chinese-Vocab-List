@@ -1,3 +1,6 @@
+from collections import defaultdict
+
+
 class HSKWord:
   def __init__(self, simp, pos, level):
     """
@@ -61,6 +64,7 @@ class HSKList:
     :param list[HSKWord] words: 
     """
     self.words = words
-    self.words_by_simp = {}
+    self.word_lists_by_simp = defaultdict(list)
     for word in words:
-      self.words_by_simp[word.simp] = word
+      self.word_lists_by_simp[word.simp].append(word)
+    self.word_lists_by_simp = dict(self.word_lists_by_simp)

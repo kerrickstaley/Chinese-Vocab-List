@@ -28,8 +28,9 @@ def main():
   all_simp = {w.simp for w in hl.words + sl.words}
   all_simp_rank = []
   for simp in all_simp:
-    if simp in hl.words_by_simp:
-      hsk_rank = HSK_LEVEL_TO_RANK[hl.words_by_simp[simp].level]
+    if simp in hl.word_lists_by_simp:
+      hsk_level = min(word.level for word in hl.word_lists_by_simp[simp])
+      hsk_rank = HSK_LEVEL_TO_RANK[hsk_level]
     else:
       hsk_rank = float('inf')
 
