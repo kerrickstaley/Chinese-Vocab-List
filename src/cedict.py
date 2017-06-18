@@ -1,4 +1,4 @@
-from collections import defaultdict
+from collections import defaultdict, OrderedDict
 import re
 
 
@@ -130,6 +130,15 @@ class CedictClassifier:
     pinyin = rest.rstrip(']')
 
     return cls(trad, simp, pinyin)
+
+  def to_dict(self):
+    fields = ['trad', 'simp', 'pinyin']
+    rv = OrderedDict((field, getattr(self, field)) for field in fields if getattr(self, field))
+
+    if rv['simp'] == rv['trad']:
+      del rv['simp']
+
+    return rv
 
 
 def load_cedict_file(fpath):
