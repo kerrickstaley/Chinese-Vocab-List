@@ -197,7 +197,7 @@ class DedupedSubtlexList(FilteredSubtlexList):
 
     new_words = []
     new_words_by_simp = {}
-    for word in words:
+    for word in self.words:
       # sometimes words appear twice in the file, so we de-dupe those with the previous occurrence
       if word.simp in new_words_by_simp:
         existing_word = new_words_by_simp[word.simp]
