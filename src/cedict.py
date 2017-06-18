@@ -1,6 +1,8 @@
 from collections import defaultdict, OrderedDict
 import re
 
+import yaml
+
 
 def toned_char(c, tone):
   data = [
@@ -182,3 +184,74 @@ class Cedict:
 
     self.word_lists_by_trad = dict(self.word_lists_by_trad)
     self.word_lists_by_simp = dict(self.word_lists_by_simp)
+
+
+class CedictWithPreferredEntries(Cedict):
+
+  REFERENCE_REGEX = re.compile('^variant of |^old variant of |^see [^ ]+\[[^\]]+\]$')
+
+  @classmethod
+  def load(cls):
+    """
+    :return CedictWithPreferredEntries:
+    """
+    return cls(load_cedict_file('reference_files/cc_cedict.txt'),
+               cls.load_preferred_entries_file('contrib_files/preferred_entries.yaml'))
+
+  @staticmethod
+  def load_preferred_entries_file(fpath):
+    with open(fpath) as h:
+      return yaml.load(h)
+
+  def pick_entry(self, simp=None, trad=None):
+    if bool(simp) == bool(trad):
+      raise Exception('must pass exactly one of simp and trad')
+
+    if simp:
+      options = self.word_lists_by_simp[simp]
+    else:
+      options = self.word_lists_by_trad[trad]
+
+    options = [opt for opt in options if not self.is_reference_entry(opt)]
+
+    if len(options) == 1:
+      return options[0]
+
+    if simp and simp in self.preferred_entries:
+      preferred = self.preferred_entries[simp]
+      valid_options = []
+      for option in options:
+        if 'trad' in preferred and option.trad != preferred['trad']:
+          continue
+        # TODO this is sorta messy, we should be consistent about whether we store in ASCII format or not
+        if 'pinyin' in preferred and option.pinyin != toned_syls(preferred['pinyin']):
+          continue
+        valid_options.append(option)
+      if len(valid_options) != 1:
+        raise Exception('{} had a preferred entry, but there are {} valid options: {}'.format(
+          simp, len(valid_options), valid_options))
+
+      return valid_options[0]
+
+    # one last heuristic: try removing all the entries whose pinyin starts with a capital letter and see if there is
+    # only one entry left. This filters out things like "能: surname Neng"
+    options_filtered = [opt for opt in options if 'A' <= opt.pinyin[0] <= 'Z']
+    if len(options_filtered) == 1:
+      return options_filtered[0]
+
+    return None
+
+  @classmethod
+  def is_reference_entry(cls, entry):
+    """
+    Check if `entry` is just a reference to another entry (we should never include it if this is the case)
+    :param CedictWord entry:
+    :return bool:
+    """
+    return cls.REFERENCE_REGEX.match(entry.defs[0])
+
+  def __init__(self, words, preferred_entries):
+    super().__init__(words)
+    self.preferred_entries = preferred_entries
+    self.words_by_trad = {t: self.pick_entry(trad=t) for t in self.word_lists_by_trad}
+    self.words_by_simp = {s: self.pick_entry(simp=s) for s in self.word_lists_by_simp}

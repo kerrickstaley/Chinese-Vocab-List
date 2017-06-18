@@ -1,0 +1,510 @@
+# Caveat: I don't yet have a way to store multiple traditional characters or
+# pronunciations in a single note, so the below is moot.
+#
+# General comment: when looking at duplicates, think about:
+#   1. Do the different entries have very different definitions? If so, is one
+#      definition significantly more obscure, or only used as part of a larger
+#      word?
+#   2. Do the different entries have different pronunciations? If so, do they
+#      vary on tone only, or are the consonants/vowels different too?
+#   3. Is it a case where multiple traditional characters were mapped to a
+#      single simplified character?
+#
+# In general, we want to only include the most common meaning of the word
+# (the HSK list actually includes words with two important senses twice).
+# An exception is that if a word has multiple commonly used traditional
+# versions, we should include all of them in the same note. Cases where there
+# are multiple similar pronunciations for a character may also be included in
+# a single note.
+# Note: 对, 等, 花, 过 appear twice in HSK but have only one MDBG entry, ¯\_(ツ)_/¯
+
+的:
+  pinyin: de5
+东西:
+  pinyin: dong1 xi5
+都:
+  pinyin: dou1
+读:
+  pinyin: du2
+# TODO: fix the below entry
+多少:
+  pinyin: duo1 shao5
+好:
+  pinyin: hao3
+号:
+  pinyin: hao4
+喝:
+  pinyin: he1
+和:
+  pinyin: he2
+  trad: 和
+回:
+  pinyin: hui2
+  trad: 回
+会:
+  pinyin: hui4
+几:
+  pinyin: ji3
+看:
+  pinyin: kan4
+了:
+  pinyin: le5
+里:
+  pinyin: li3
+  trad: 裡
+吗:
+  pinyin: ma5
+哪:
+  pinyin: na3
+那:
+  pinyin: na4
+呢:
+  pinyin: ne5
+年:
+  pinyin: nian2
+  trad: 年
+少:
+  pinyin: shao3
+说:
+  pinyin: shuo1
+听:
+  pinyin: ting1
+# TODO: not sure which pronunciation we want, also there are two useful definitions of 喂 (叹词 and 动词)
+喂:
+  pinyin: wei2
+吧:
+  pinyin: ba5
+比:
+  pinyin: bi3
+别:
+  pinyin: bie2
+# TODO there are two useful definitions of 长 (形容词 and 动词)
+长:
+  pinyin: chang2
+从:
+  pinyin: cong2
+# TODO: there are two useful definitions of 得 (助词 and 助动词)
+得:
+  pinyin: de5
+给:
+  pinyin: gei3
+# TODO: there are two useful definitions of 还 (副词 and 动词)
+还:
+  pinyin: hai2
+好吃:
+  pinyin: hao3 chi1
+累:
+  pinyin: lei4
+离:
+  pinyin: li2
+  trad: 離
+女:
+  pinyin: nu:3
+便宜:
+  pinyin: pian2 yi5
+妻子:
+  pinyin: qi1 zi5
+千:
+  pinyin: qian1
+  trad: 千
+药:
+  pinyin: yao4
+  trad: 藥
+要:
+  pinyin: yao4
+远:
+  pinyin: yuan3
+着:
+  pinyin: zhe5
+啊:
+  pinyin: a5
+把:
+  pinyin: ba3
+差:
+  pinyin: cha4
+地:
+  pinyin: de5
+地方:
+  pinyin: di4 fang5
+冬:
+  pinyin: dong1
+  trad: 冬
+发:
+  pinyin: fa1
+分:
+  pinyin: fen1
+# TODO: update CCEDICT entry for 剛纔
+刚才:
+  pinyin: gang1 cai2
+  trad: 剛才
+更:
+  pinyin: geng4
+故事:
+  pinyin: gu4 shi5
+教:
+  pinyin: jiao1
+角:
+  pinyin: jiao3
+# TODO: update CCEDICT entry for 瞭解
+# note that 瞭解 appears occasionally but 了解 is commoner
+了解:
+  pinyin: liao3 jie3
+  trad: 了解
+难:
+  pinyin: nan2
+胖:
+  pinyin: pang4
+骑:
+  pinyin: qi2
+# TODO: is CCEDICT entry correct? Both neutral tones?
+起来:
+  pinyin: qi5 lai5
+秋:
+  pinyin: qiu1
+  trad: 秋
+伞:
+  pinyin: san3
+  trad: 傘
+腿:
+  pinyin: tui3
+  trad: 腿
+为:
+  pinyin: wei4
+  trad: 為
+向:
+  pinyin: xiang4
+  trad: 向
+# TODO there are two useful definitions of 只 (量词 and 副词)
+# TODO: there are two traditional characters, which is more common?
+只:
+  pinyin: zhi3
+  trad: 只
+种:
+  pinyin: zhong3
+场:
+  pinyin: chang3
+  trad: 場
+大夫:
+  pinyin: dai4 fu5
+当:
+  pinyin: dang1
+  trad: 當
+倒:
+  pinyin: dao4
+底:
+  pinyin: di3
+干:
+  pinyin: gan4
+汗:
+  pinyin: han4
+# TODO: which meaning of 假 do we want?
+假:
+  pinyin: jia3
+结果:
+  pinyin: jie2 guo3
+# TODO: do we want both pronunciations?
+空:
+  pinyin: kong4
+困:
+  pinyin: kun4
+  trad: 困
+弄:
+  pinyin: nong4
+  trad: 弄
+生意:
+  pinyin: sheng1 yi5
+省:
+  pinyin: sheng3
+台:
+  pinyin: tai2
+  trad: 臺
+汤:
+  pinyin: tang1
+趟:
+  pinyin: tang4
+咸:
+  pinyin: xian2
+  trad: 鹹
+行:
+  pinyin: xing2
+与:
+  pinyin: yu3
+云:
+  pinyin: yun2
+  trad: 雲
+脏:
+  pinyin: zang1
+  trad: 髒
+重:
+  pinyin: zhong4
+重点:
+  pinyin: zhong4 dian3
+转:
+  pinyin: zhuan3
+赚:
+  pinyin: zhuan4
+唉:
+  pinyin: ai1
+# TODO: not sure this is correct, might not matter
+暗:
+  pinyin: an4
+  trad: 暗
+# TODO: not sure this is correct
+薄:
+  pinyin: bao2
+背:
+  pinyin: bei1
+  trad: 背
+# TODO: might be good to have both pronunciations
+便:
+  pinyin: bian4
+朝:
+  pinyin: chao2
+称:
+  pinyin: cheng1
+# TODO: might be good to have both traditional characters
+冲:
+  pinyin: chong1
+  trad: 衝
+丑:
+  pinyin: chou3
+  trad: 醜
+臭:
+  pinyin: chou4
+# TODO: not sure this is correct
+大方:
+  pinyin: da4 fang5
+挡:
+  pinyin: dang3
+地道:
+  pinyin: di4 dao5
+哈:
+  pinyin: ha1
+# TODO: do we want both meanings?
+划:
+  pinyin: hua2
+  trad: 劃
+结实:
+  pinyin: jie1 shi5
+尽快:
+  pinyin: jin3 kuai4
+  trad: 盡快
+尽量:
+  pinyin: jin3 liang4
+精神:
+  pinyin: jing1 shen2
+克:
+  pinyin: ke4
+  trad: 克
+厘米:
+  pinyin: li2 mi3
+  trad: 厘米
+# TODO: not sure which meaning, probably doesn't matter
+嗯:
+  pinyin: en5
+匹:
+  pinyin: pi3
+  trad: 匹
+片:
+  pinyin: pian4
+签:
+  pinyin: qian1
+  trad: 簽
+浅:
+  pinyin: qian3
+切:
+  pinyin: qie1
+圈:
+  pinyin: quan1
+数:
+  pinyin: shu3
+土地:
+  pinyin: tu3 di4
+吐:
+  pinyin: tu3
+# TODO: do we want both meanings?
+团:
+  pinyin: tuan2
+  trad: 團
+尾巴:
+  pinyin: wei3 ba5
+# TODO: do we want all the meanings?
+系:
+  pinyin: xi4
+  trad: 係
+吓:
+  pinyin: xia4
+乙:
+  pinyin: yi3
+# TODO: do we want both pronunciations?
+晕:
+  pinyin: yun1
+# TODO: multiple tones
+占:
+  pinyin: zhan4
+  trad: 占
+# TODO: multiple tones
+涨:
+  pinyin: zhang3
+正:
+  pinyin: zheng4
+追:
+  pinyin: zhui1
+# TODO: multiple tones
+熬:
+  pinyin: ao2
+# TODO: multiple tones
+挨:
+  pinyin: ai2
+扒:
+  pinyin: ba1
+本事:
+  pinyin: ben3 shi5
+扁:
+  pinyin: bian3
+乘:
+  pinyin: cheng2
+盛:
+  pinyin: cheng2
+澄清:
+  pinyin: cheng2 qing1
+# TODO: not sure which pronunciation
+出息:
+  pinyin: chu1 xi5
+刺:
+  pinyin: ci4
+大意:
+  pinyin: da4 yi4
+# TODO: probably want both pronunciations
+得罪:
+  pinyin: de2 zui4
+# TODO: probably want both traditional characters
+吊:
+  pinyin: diao4
+  trad: 吊
+# TODO: probably want both pronunciations
+恶心:
+  pinyin: e3 xin1
+  trad: 惡心
+# TODO: 發佈 wins the Google search popularity contest by a hair, but 發布 is used
+#   by government sites (and is simpler), so I chose the latter
+发布:
+  pinyin: fa1 bu4
+  trad: 發布
+分量:
+  pinyin: fen4 liang5
+# TODO: do we want both pronunciations?
+搁:
+  pinyin: ge1
+# TODO: do we want both pronunciations?
+跟前:
+  pinyin: gen1 qian2
+# TODO: do we want both pronunciations?
+公道:
+  pinyin: gong1 dao4
+# TODO: do we want both meanings?
+横:
+  pinyin: heng2
+# TODO: do we want both meanings?
+哄:
+  pinyin: hong3
+# TODO: do we want the other pronunciation?
+晃:
+  pinyin: huang3
+  trad: 晃
+# TODO: not sure which traditional characters we want
+汇报:
+  pinyin: hui4 bao4
+  trad: 匯報
+# TODO: probably want to include juan4
+卷:
+  pinyin: juan3
+  trad: 卷
+扛:
+  pinyin: gang1
+口音:
+  pinyin: kou3 yin5
+# TODO: probably want both traditional characters
+扣:
+  pinyin: kou4
+  trad: 扣
+款式:
+  pinyin: kuan3 shi4
+啦:
+  pinyin: la5
+# TODO: do we want both meanings?
+利害:
+  pinyin: li4 hai5
+# TODO: probably want both meanings
+淋:
+  pinyin: lin2
+搂:
+  pinyin: lou3
+眯:
+  pinyin: mi1
+# TODO: do we want all pronunciations?
+拧:
+  pinyin: ning2
+# TODO: probably want all pronunciations
+哦:
+  pinyin: o4
+劈:
+  pinyin: pi1
+# TODO: not sure which pronunciation we want
+撇:
+  pinyin: pie1
+铺:
+  pinyin: pu4
+  trad: 鋪
+# TODO: maybe want both pronunciations
+翘:
+  pinyin: qiao4
+人家:
+  pinyin: ren2 jia5
+拾:
+  pinyin: shi2
+苏醒:
+  pinyin: su1 xing3
+  trad: 甦醒
+台风:
+  pinyin: tai2 feng1
+  trad: 颱風
+哇:
+  pinyin: wa5
+温和:
+  pinyin: wen1 he2
+削:
+  pinyin: xue1
+# TODO: again, we're going with 了 instead of 瞭 here
+一目了然:
+  pinyin: yi1 mu4 liao3 ran2
+  trad: 一目了然
+# TODO: probably want both meanings
+熨:
+  pinyin: yun4
+咋:
+  pinyin: za3
+攒:
+  pinyin: zan3
+扎:
+  pinyin: zha1
+折:
+  pinyin: zhe2
+正当:
+  pinyin: zheng4 dang1
+周转:
+  pinyin: zhou1 zhuan3
+  trad: 周轉
+拽:
+  pinyin: zhuai4
+幢:
+  pinyin: zhuang4
+琢磨:
+  pinyin: zhuo2 mo2
+歪:
+  pinyin: wai1
+先生:
+  pinyin: Xian1 sheng5
+# TODO: not sure this is the best meaning
+当时:
+  pinyin: dang1 shi2
