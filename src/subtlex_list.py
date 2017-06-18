@@ -11,19 +11,21 @@ class SubtlexWord:
   TOTAL_WORDS = 33546516
   TOTAL_FILES = 6243
 
-  def __init__(self, simp, w_count, w_cd, all_pos, all_pos_freq):
+  def __init__(self, simp, w_count, w_cd, all_pos, all_pos_freq, rank):
     """
     :param str simp: simplified characters for word
     :param int w_count: total number of times word appeared in SUBTLEX dataset
     :param int w_cd: number of files word appeared in
     :param list[str] all_pos: all parts-of-speech
     :param all_pos_freq: number of times word appeared as each part-of-speech
+    :param int rank: rank in the subtlex file (most frequent is 1, second most frequent is 2, etc.)
     """
     self.simp = simp
     self.w_count = w_count
     self.w_cd = w_cd
     self.all_pos = all_pos
     self.all_pos_freq = all_pos_freq
+    self.rank = rank
 
   @property
   def w_million(self):
@@ -54,7 +56,7 @@ class SubtlexWord:
     return self.all_pos_freq[0]
 
   @classmethod
-  def parse_from_line(cls, line):
+  def parse_from_line(cls, line, rank):
     line = line.strip()
     (simp, _, _, _, w_count, w_million, _, w_cd, w_cd_pct, _, dominant_pos, dominant_pos_freq, all_pos, all_pos_freq, *_
         ) = line.split('\t')
@@ -73,6 +75,7 @@ class SubtlexWord:
       w_cd=w_cd,
       all_pos=all_pos,
       all_pos_freq=all_pos_freq,
+      rank=rank,
     )
 
     if round(rv.w_million, 2) != w_million:
@@ -90,13 +93,14 @@ class SubtlexWord:
     return rv
 
   def __repr__(self):
-    return '{}(simp={}, w_count={}, w_cd={}, all_pos={}, all_pos_freq={})'.format(
+    return '{}(simp={}, w_count={}, w_cd={}, all_pos={}, all_pos_freq={}, rank={})'.format(
       self.__class__.__name__,
       self.simp,
       self.w_count,
       self.w_cd,
       self.all_pos,
       self.all_pos_freq,
+      self.rank,
     )
 
 
@@ -112,8 +116,9 @@ def load_subtlex_file(fpath):
     next(lines)  # skip header line
 
     rv = []
-    for line in lines:
-      rv.append(SubtlexWord.parse_from_line(line))
+    for rank, line in enumerate(lines):
+      rank += 1
+      rv.append(SubtlexWord.parse_from_line(line, rank))
 
     return rv
 
