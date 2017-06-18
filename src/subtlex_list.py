@@ -211,8 +211,14 @@ class DedupedSubtlexList(FilteredSubtlexList):
     new_words = []
     for word in self.words:
       if word.simp in dupes:
-        existing_word = self.words_by_simp[dupes[word.simp]]
-        self.combine_words(existing_word, word)
+        dupe_simps = dupes[word.simp]
+        if dupe_simps is None:
+          continue
+        if not isinstance(dupe_simps, list):
+          dupe_simps = [dupe_simps]
+        for dupe_simp in dupe_simps:
+          dupe_word = self.words_by_simp[dupe_simp]
+          self.combine_words(dupe_word, word)
       else:
         new_words.append(word)
     self.words = new_words
