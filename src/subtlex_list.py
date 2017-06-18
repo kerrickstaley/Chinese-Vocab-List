@@ -4,6 +4,10 @@ in them using the ICTCLAS/NLPIR parser. This module provides an API for the word
 
 The files were taken from this site: http://crr.ugent.be/programs-data/subtitle-frequencies/subtlex-ch.
 """
+import yaml
+
+from cedict import Cedict
+
 
 class SubtlexWord:
   TOTAL_WORDS = 33546516
@@ -139,3 +143,110 @@ class SubtlexList:
         # TODO no idea why this happens
         continue
       self.words_by_simp[word.simp] = word
+
+  def re_sort_rank_index(self):
+    """
+    Re-sort, re-rank, and re-index the words.
+    """
+    self.words.sort(key=lambda word: -word.w_count)
+
+    for rank, word in enumerate(self.words):
+      word.rank = rank + 1
+
+    self.words_by_simp = {word.simp: word for word in self.words}
+
+
+class DedupedSubtlexList(SubtlexList):
+  """
+  Subclass of SubtlexList that removes redundant words.
+  """
+  @classmethod
+  def load(cls):
+    return cls(
+      load_subtlex_file('reference_files/subtlex_ch.tsv'),
+      cls.load_dupes_file('contrib_files/subtlex_dupes.yaml'))
+
+  @staticmethod
+  def load_dupes_file(fpath):
+    with open(fpath) as h:
+      return yaml.load(h)
+
+  def __init__(self, words, dupes):
+    self.words = []
+    self.words_by_simp = {}
+    for word in words:
+      # sometimes words appear twice in the file, so we de-dupe those with the previous occurrence
+      if word.simp in self.words_by_simp:
+        existing_word = self.words_by_simp[word.simp]
+        self.combine_words(existing_word, word)
+      else:
+        self.words.append(word)
+        self.words_by_simp[word.simp] = word
+
+    new_words = []
+    for word in self.words:
+      if word.simp in dupes:
+        existing_word = self.words_by_simp[dupes[word.simp]]
+        self.combine_words(existing_word, word)
+      else:
+        new_words.append(word)
+    self.words = new_words
+
+    self.re_sort_rank_index()
+
+  @staticmethod
+  def combine_words(dest, src):
+    dest.w_count += src.w_count
+
+    dest.w_cd = max(dest.w_cd, src.w_cd)  # this is about the best we can do here :/
+
+    # update dest.all_pos
+    for i in range(len(src.all_pos)):
+      for j in range(len(dest.all_pos)):
+        if src.all_pos[i] == dest.all_pos[j]:
+          dest.all_pos_freq[j] += src.all_pos_freq[i]
+          break
+      else:
+        dest.all_pos.append(src.all_pos[i])
+        dest.all_pos_freq.append(src.all_pos_freq[i])
+    pairs = list(zip(dest.all_pos, dest.all_pos_freq))
+    pairs.sort(key=lambda pair: -pair[1])
+    dest.all_pos, dest.all_pos_freq = zip(*pairs)
+    dest.all_pos = list(dest.all_pos)
+    dest.all_pos_freq = list(dest.all_pos_freq)
+
+
+class FilteredSubtlexList(DedupedSubtlexList):
+  """
+  Subclass of DedupedSubtlexList that removes words that don't have CC-CEDICT entries.
+  """
+
+  @classmethod
+  def load(cls):
+    return cls(
+      load_subtlex_file('reference_files/subtlex_ch.tsv'),
+      cls.load_dupes_file('contrib_files/subtlex_dupes.yaml'),
+      Cedict.load())
+
+  def __init__(self, words, dupes, cedict):
+    super().__init__(words, dupes)
+    new_words = []
+    for word in self.words:
+      if word.simp in cedict.word_lists_by_simp:
+        new_words.append(word)
+
+    self.words = new_words
+
+    self.re_sort_rank_index()
+
+
+class LimitedSubtlexList(FilteredSubtlexList):
+  """
+  Subclass of FilteredSubtlexList that limits to 10K words.
+  """
+
+  def __init__(self, words, dupes, cedict):
+    super().__init__(words, dupes, cedict)
+    self.words = self.words[:10000]
+
+    self.re_sort_rank_index()

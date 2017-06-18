@@ -2,7 +2,7 @@ import sys
 
 from cedict import Cedict
 from hsk_list import HSKList
-from subtlex_list import SubtlexList
+from subtlex_list import LimitedSubtlexList
 
 HSK_WEIGHT = 5
 SUBTLEX_WEIGHT = 1
@@ -24,7 +24,7 @@ def combine_hsk_subtlex_ranks(hsk_rank, subtlex_rank):
 
 def main():
   hl = HSKList.load()
-  sl = SubtlexList.load()
+  sl = LimitedSubtlexList.load()
   all_simp = {w.simp for w in hl.words + sl.words}
   all_simp_rank = []
   for simp in all_simp:
