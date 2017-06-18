@@ -156,14 +156,35 @@ class SubtlexList:
     self.words_by_simp = {word.simp: word for word in self.words}
 
 
-class DedupedSubtlexList(SubtlexList):
+class FilteredSubtlexList(SubtlexList):
   """
-  Subclass of SubtlexList that removes redundant words.
+  Subclass of SubtlexList that removes words that don't have CC-CEDICT entries.
+  """
+
+  @classmethod
+  def load(cls):
+    return cls(
+      load_subtlex_file('reference_files/subtlex_ch.tsv'),
+      Cedict.load())
+
+  def __init__(self, words, cedict):
+    self.words = []
+    for word in words:
+      if word.simp in cedict.word_lists_by_simp:
+        self.words.append(word)
+
+    self.re_sort_rank_index()
+
+
+class DedupedSubtlexList(FilteredSubtlexList):
+  """
+  Subclass of FilteredSubtlexList that removes redundant words.
   """
   @classmethod
   def load(cls):
     return cls(
       load_subtlex_file('reference_files/subtlex_ch.tsv'),
+      Cedict.load(),
       cls.load_dupes_file('contrib_files/subtlex_dupes.yaml'))
 
   @staticmethod
@@ -171,17 +192,21 @@ class DedupedSubtlexList(SubtlexList):
     with open(fpath) as h:
       return yaml.load(h)
 
-  def __init__(self, words, dupes):
-    self.words = []
-    self.words_by_simp = {}
+  def __init__(self, words, cedict, dupes):
+    super().__init__(words, cedict)
+
+    new_words = []
+    new_words_by_simp = {}
     for word in words:
       # sometimes words appear twice in the file, so we de-dupe those with the previous occurrence
-      if word.simp in self.words_by_simp:
-        existing_word = self.words_by_simp[word.simp]
+      if word.simp in new_words_by_simp:
+        existing_word = new_words_by_simp[word.simp]
         self.combine_words(existing_word, word)
       else:
-        self.words.append(word)
-        self.words_by_simp[word.simp] = word
+        new_words.append(word)
+        new_words_by_simp[word.simp] = word
+    self.words = new_words
+    self.words_by_simp = new_words_by_simp
 
     new_words = []
     for word in self.words:
@@ -216,37 +241,13 @@ class DedupedSubtlexList(SubtlexList):
     dest.all_pos_freq = list(dest.all_pos_freq)
 
 
-class FilteredSubtlexList(DedupedSubtlexList):
+class LimitedSubtlexList(DedupedSubtlexList):
   """
-  Subclass of DedupedSubtlexList that removes words that don't have CC-CEDICT entries.
-  """
-
-  @classmethod
-  def load(cls):
-    return cls(
-      load_subtlex_file('reference_files/subtlex_ch.tsv'),
-      cls.load_dupes_file('contrib_files/subtlex_dupes.yaml'),
-      Cedict.load())
-
-  def __init__(self, words, dupes, cedict):
-    super().__init__(words, dupes)
-    new_words = []
-    for word in self.words:
-      if word.simp in cedict.word_lists_by_simp:
-        new_words.append(word)
-
-    self.words = new_words
-
-    self.re_sort_rank_index()
-
-
-class LimitedSubtlexList(FilteredSubtlexList):
-  """
-  Subclass of FilteredSubtlexList that limits to 10K words.
+  Subclass of DedupedSubtlexList that limits to 10K words.
   """
 
-  def __init__(self, words, dupes, cedict):
-    super().__init__(words, dupes, cedict)
+  def __init__(self, words, cedict, dupes):
+    super().__init__(words, cedict, dupes)
     self.words = self.words[:10000]
 
     self.re_sort_rank_index()
