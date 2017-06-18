@@ -4,8 +4,6 @@ in them using the ICTCLAS/NLPIR parser. This module provides an API for the word
 
 The files were taken from this site: http://crr.ugent.be/programs-data/subtitle-frequencies/subtlex-ch.
 """
-from collections import defaultdict
-
 
 class SubtlexWord:
   TOTAL_WORDS = 33546516
@@ -135,7 +133,9 @@ class SubtlexList:
 
   def __init__(self, words):
     self.words = words
-    self.words_by_simp = defaultdict(list)
+    self.words_by_simp = {}
     for word in words:
-      self.words_by_simp[word.simp].append(word)
-    self.words_by_simp = dict(self.words_by_simp)
+      if word.simp in self.words_by_simp:
+        # TODO no idea why this happens
+        continue
+      self.words_by_simp[word.simp] = word
