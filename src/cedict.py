@@ -165,11 +165,11 @@ class Cedict:
     :param list[CedictWord] words: 
     """
     self.words = words
-    self.words_by_trad = defaultdict(list)
-    self.words_by_simp = defaultdict(list)
+    self.word_lists_by_trad = defaultdict(list)
+    self.word_lists_by_simp = defaultdict(list)
     for word in words:
-      self.words_by_trad[word.trad].append(word)
-      self.words_by_simp[word.simp].append(word)
+      self.word_lists_by_trad[word.trad].append(word)
+      self.word_lists_by_simp[word.simp].append(word)
 
-    self.words_by_trad = dict(self.words_by_trad)
-    self.words_by_simp = dict(self.words_by_simp)
+    self.word_lists_by_trad = dict(self.word_lists_by_trad)
+    self.word_lists_by_simp = dict(self.word_lists_by_simp)
