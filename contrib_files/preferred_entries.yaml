@@ -508,3 +508,19 @@
 # TODO: not sure this is the best meaning
 当时:
   pinyin: dang1 shi2
+告诉:
+  pinyin: gao4 su5
+没:
+  pinyin: mei2
+过去:
+  pinyin: guo4 qu4
+见:
+  pinyin: jian4
+# TODO I've heard nobody uses this traditional form, bring it up with CC-CEDICT editors
+才:
+  trad: 纔
+打:
+  pinyin: da3
+# TODO (unrelated to this project) why does this render as the Japanese variant on my system, sigh
+将:
+  pinyin: jiang1
