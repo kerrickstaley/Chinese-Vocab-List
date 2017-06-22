@@ -524,3 +524,7 @@
 # TODO (unrelated to this project) why does this render as the Japanese variant on my system, sigh
 将:
   pinyin: jiang1
+过:
+  pinyin: guo4
+中:
+  pinyin: zhong1

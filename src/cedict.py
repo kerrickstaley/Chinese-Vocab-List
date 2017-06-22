@@ -235,7 +235,7 @@ class CedictWithPreferredEntries(Cedict):
 
     # one last heuristic: try removing all the entries whose pinyin starts with a capital letter and see if there is
     # only one entry left. This filters out things like "能: surname Neng"
-    options_filtered = [opt for opt in options if 'A' <= opt.pinyin[0] <= 'Z']
+    options_filtered = [opt for opt in options if not ('A' <= opt.pinyin[0] <= 'Z')]
     if len(options_filtered) == 1:
       return options_filtered[0]
 
