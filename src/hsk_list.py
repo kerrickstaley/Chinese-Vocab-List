@@ -63,7 +63,8 @@ class HSKList:
     """
     :param list[HSKWord] words: 
     """
-    self.words = words
+    # HSK includes both 记录 and 纪录, but the latter is listed as a variant of the former
+    self.words = [word for word in words if word.simp != '纪录']
     self.word_lists_by_simp = defaultdict(list)
     for word in words:
       self.word_lists_by_simp[word.simp].append(word)
