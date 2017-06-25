@@ -217,7 +217,13 @@ class DedupedSubtlexList(FilteredSubtlexList):
         if not isinstance(dupe_simps, list):
           dupe_simps = [dupe_simps]
         for dupe_simp in dupe_simps:
-          dupe_word = self.words_by_simp[dupe_simp]
+          if dupe_simp in self.words_by_simp:
+            dupe_word = self.words_by_simp[dupe_simp]
+          else:
+            # for some dupes words, e.g. 干吗 -> 干嘛, the dupe word doesn't exist
+            dupe_word = SubtlexWord(dupe_simp, 0, 0, [], [], -1)
+            self.words.append(dupe_word)
+            self.words_by_simp[dupe_simp] = dupe_word
           self.combine_words(dupe_word, word)
       else:
         new_words.append(word)
