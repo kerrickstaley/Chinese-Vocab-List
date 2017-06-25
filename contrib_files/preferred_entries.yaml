@@ -528,3 +528,59 @@
   pinyin: guo4
 中:
   pinyin: zhong1
+车:
+  pinyin: che1
+后:
+  trad: 後
+并:
+  trad: 並
+那里:
+  trad: 那裡
+哪里:
+  trad: 哪裡
+跑:
+  pinyin: pao3
+头:
+  pinyin: tou2
+同:
+  trad: 同
+周:
+  trad: 周
+  pinyin: zhou1
+于:
+  trad: 於
+# TODO: multiple definitions are redundant
+喔:
+  pinyin: o1
+# TODO: not sure this is correct
+令:
+  pinyin: ling4
+# TODO: other entry may need to be corrected/merged
+待:
+  pinyin: dai4
+# TODO: is this the correct entry/should we include both chu3 and chu4?
+处:
+  pinyin: chu3
+间:
+  pinyin: jian1
+曾:
+  pinyin: ceng2
+强:
+  pinyin: qiang2
+  trad: 強
+# TODO: entries for this one should probably be merged in CEDICT
+小子:
+  pinyin: xiao3 zi5
+作:
+  pinyin: zuo4
+耶:
+  pinyin: ye5
+子:
+  pinyin: zi3
+藏:
+  pinyin: cang2
+# TODO definitely want both entries (trad: 麵 and trad: 面)
+面:
+  trad: 麵
+局:
+  trad: 局
