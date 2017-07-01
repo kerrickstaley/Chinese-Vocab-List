@@ -1,10 +1,11 @@
 import sys
 
-from cedict import Cedict
+from cedict import CedictWithPreferredEntries
 from hsk_list import HSKList
 from subtlex_list import LimitedSubtlexList
+from vocab_list import VocabWord, VocabList
 
-HSK_WEIGHT = 5
+HSK_WEIGHT = 2
 SUBTLEX_WEIGHT = 1
 # for a given level, this gives the mean rank of a word in that level
 HSK_LEVEL_TO_RANK = {
@@ -25,6 +26,7 @@ def combine_hsk_subtlex_ranks(hsk_rank, subtlex_rank):
 def main():
   hl = HSKList.load()
   sl = LimitedSubtlexList.load()
+  cd = CedictWithPreferredEntries.load()
   all_simp = {w.simp for w in hl.words + sl.words}
   all_simp_rank = []
   for simp in all_simp:
@@ -43,8 +45,25 @@ def main():
 
   all_simp_rank.sort(key=lambda pair: pair[1])
 
-  for simp, _ in all_simp_rank[:40]:
-    print(simp)
+  vocab_words = []
+  for simp, _ in all_simp_rank[:2500]:
+    try:
+      entry = cd.words_by_simp[simp]
+    except KeyError:
+      continue  # TODO port over extra defs logic
+    if entry is None:
+      raise Exception('no unique entry for {}, options are {}'.format(simp, cd.word_lists_by_simp[simp]))
+    vw = VocabWord(
+      trad=entry.trad,
+      simp=simp,
+      pinyin=entry.pinyin,
+      tw_pinyin=entry.tw_pinyin,
+      defs=entry.defs,
+      clfrs=entry.clfrs,
+      example_sentences=[])
+    vocab_words.append(vw)
+  vocab_list = VocabList(vocab_words)
+  vocab_list.dump_to_file('/dev/stdout')
 
 
 if __name__ == '__main__' and not hasattr(sys, 'ps1'):
