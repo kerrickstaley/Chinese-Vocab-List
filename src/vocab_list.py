@@ -1,6 +1,17 @@
 from collections import OrderedDict
+import os.path
 
 import yaml
+
+try:
+  # TODO this is really bad
+  from .cedict import CedictClassifier
+except ImportError:
+  pass
+
+VOCAB_FILE = os.path.join(
+  os.path.dirname(os.path.abspath(__file__)),
+  'chinese_vocab_list.yaml')
 
 
 class VocabWord:
@@ -51,6 +62,22 @@ class VocabWord:
 
     return rv
 
+  @classmethod
+  def from_dict(cls, d):
+    if 'clfrs' in d:
+      d['clfrs'] = [CedictClassifier.from_dict(item) for item in d['clfrs']]
+    # TODO support example sentences
+    d.pop('example_sentences', None)
+
+    return cls(
+        trad=d['trad'],
+        simp=d.get('simp', d['trad']),
+        pinyin=d['pinyin'],
+        tw_pinyin=d.get('tw_pinyin'),
+        defs=d['defs'],
+        clfrs=d.get('clfrs', []),
+        example_sentences=[])
+
 
 class ExampleSentence:
   def __init__(self, trad, simp, pinyin, eng):
@@ -98,6 +125,13 @@ yaml.add_representer(OrderedDict, represent_ordereddict)
 
 
 class VocabList:
+  @classmethod
+  def load(cls):
+    with open(VOCAB_FILE) as h:
+      words = [VocabWord.from_dict(d) for d in yaml.load(h)]
+      return VocabList(words)
+
+
   def __init__(self, words):
     self.words = words
 

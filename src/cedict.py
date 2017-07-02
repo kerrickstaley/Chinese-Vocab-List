@@ -142,6 +142,14 @@ class CedictClassifier:
 
     return rv
 
+  @classmethod
+  def from_dict(cls, d):
+    return cls(
+      trad=d['trad'],
+      simp=d.get('simp', d['trad']),
+      pinyin=d['pinyin'],
+    )
+
 
 def load_cedict_file(fpath):
   """
