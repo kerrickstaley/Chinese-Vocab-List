@@ -19,8 +19,11 @@ HSK_LEVEL_TO_RANK = {
 
 
 def combine_hsk_subtlex_ranks(hsk_rank, subtlex_rank):
-  # assuming Zipf's law
-  return (HSK_WEIGHT + SUBTLEX_WEIGHT) / (HSK_WEIGHT / hsk_rank + SUBTLEX_WEIGHT / subtlex_rank)
+  # assuming Zipf's law, so we take a (weighted) harmonic mean
+  denominator = HSK_WEIGHT / hsk_rank + SUBTLEX_WEIGHT / subtlex_rank
+  if denominator == 0:
+    return float('inf')
+  return (HSK_WEIGHT + SUBTLEX_WEIGHT) / denominator
 
 
 def main():
