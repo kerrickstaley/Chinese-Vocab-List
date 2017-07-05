@@ -131,9 +131,13 @@ class VocabList:
       words = [VocabWord.from_dict(d) for d in yaml.load(h)]
       return VocabList(words)
 
-
   def __init__(self, words):
     self.words = words
+    self.simp_to_word = {}
+    self.trad_to_word = {}
+    for word in self.words:
+      self.simp_to_word[word.simp] = word
+      self.trad_to_word[word.trad] = word
 
   def dump_to_file(self, fpath):
     data = [word.to_dict() for word in self.words]
