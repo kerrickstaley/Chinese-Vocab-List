@@ -584,3 +584,65 @@
   trad: 麵
 局:
   trad: 局
+卡:
+  pinyin: ka3
+# TODO: correct entry?
+混:
+  pinyin: hun4
+边:
+  pinyin: bian1
+阿:
+  pinyin: a1
+# we're simplifying things here, see https://forum.wordreference.com/threads/pronunciation-%E5%B0%BD.2076930/
+# 盡 and 儘 have slightly different pronunciations (jin4 vs jin3) and slightly different meanings
+# 盡 is almost 10x more common (per Google) so we stick with it
+尽:
+  trad: 盡
+约:
+  pinyin: yue1
+幸:
+  trad: 幸
+  pinyin: xing4
+# TODO: want both entries?
+通:
+  pinyin: tong1
+钟:
+  trad: 鐘
+只不过:
+  trad: 只不過
+准:
+  trad: 準
+亲:
+  pinyin: qin1
+# TODO: which entry?
+传:
+  pinyin: chuan2
+高中:
+  pinyin: gao1 zhong1
+王:
+  pinyin: wang2
+弹:
+  pinyin: tan2
+度:
+  pinyin: du4
+语:
+  pinyin: yu3
+修:
+  trad: 修
+  pinyin: xiu1
+# TODO: not sure which entry
+落:
+  pinyin: luo4
+# TODO probably also want yue4
+乐:
+  pinyin: le4
+塞:
+  pinyin: sai1
+挑:
+  pinyin: tiao1
+炸:
+  pinyin: zha2
+相:
+  pinyin: xiang4
+分子:
+  trad: 份子

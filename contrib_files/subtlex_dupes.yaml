@@ -225,3 +225,19 @@
 下面:
   - 下
   - 面
+兴趣: 感兴趣  # HSK
+你们: null  # given that 我们 and 你 appear in the list we don't really need this
+他们: null  # given that 我们 and 他 appear in the list we don't really need this
+们: null  # dupe of 我们
+好事: 事
+调: 调查  # TODO don't really know if this is used on its own or only as an abbreviation
+知: 知识
+# 起 just has too many meanings, it's better to learn all the individual meanings separately
+# TODO what about cases where 起 appears alone (e.g. as a classifier)
+起: null
+特: 特点  # HSK
+法: 法律  # HSK
+自: 自己  # HSK
+时: 时候  # HSK
+已: 已经  # HSK
+情: 感情  # HSK
