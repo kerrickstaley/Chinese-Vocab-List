@@ -5,7 +5,7 @@ from hsk_list import HSKList
 from subtlex_list import LimitedSubtlexList
 from vocab_list import VocabWord, VocabList
 
-HSK_WEIGHT = 2
+HSK_WEIGHT = 1
 SUBTLEX_WEIGHT = 1
 # for a given level, this gives the mean rank of a word in that level
 HSK_LEVEL_TO_RANK = {
