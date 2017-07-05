@@ -55,7 +55,7 @@ def main():
     except KeyError:
       continue  # TODO port over extra defs logic
     if entry is None:
-      raise Exception('no unique entry for {}, options are {}'.format(simp, cd.word_lists_by_simp[simp]))
+      raise Exception('no unique entry for {}, options are:\n{}'.format(simp, '\n'.join('- ' + repr(i) for i in cd.word_lists_by_simp[simp])))
     vw = VocabWord(
       trad=entry.trad,
       simp=simp,
