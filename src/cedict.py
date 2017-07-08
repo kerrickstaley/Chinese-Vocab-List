@@ -3,6 +3,8 @@ import re
 
 import yaml
 
+from models import Classifier
+
 
 def toned_char(c, tone):
   data = [
@@ -62,7 +64,7 @@ class CedictWord:
     :param str pinyin: pinyin, e.g. 'nǐ hǎo' (not 'ni3 hao3')
     :param str|None tw_pinyin: Taiwanese pinyin, or None
     :param list[str] defs: list of definitions
-    :param list[CedictClassifier] clfrs: list of classifiers
+    :param list[Classifier] clfrs: list of classifiers
     """
     self.trad = trad
     self.simp = simp
@@ -91,7 +93,7 @@ class CedictWord:
     for def_ in defs:
       if def_.startswith('CL:'):
         pieces = def_.split(':', 2)[1].split(',')
-        clfrs = [CedictClassifier.parse(piece) for piece in pieces]
+        clfrs = [parse_cedict_classifier(piece) for piece in pieces]
       elif def_.startswith('Taiwan pr. ['):
         tw_pinyin = def_.split('[')[1].rstrip(']')
       else:
@@ -110,45 +112,16 @@ class CedictWord:
     )
 
 
-class CedictClassifier:
-  def __init__(self, trad, simp, pinyin):
-    """
-    :param str trad: traditional form
-    :param str simp: simplified form
-    :param str pinyin: pinyin, e.g. 'ge' (not 'ge5')
-    """
-    self.trad = trad
-    self.simp = simp
-    self.pinyin = pinyin
+def parse_cedict_classifier(s):
+  if '|' in s:
+    trad, rest = s.split('|')
+    simp, rest = rest.split('[')
+  else:
+    trad, rest = s.split('[')
+    simp = trad
+  pinyin = rest.rstrip(']')
 
-  @classmethod
-  def parse(cls, s):
-    if '|' in s:
-      trad, rest = s.split('|')
-      simp, rest = rest.split('[')
-    else:
-      trad, rest = s.split('[')
-      simp = trad
-    pinyin = rest.rstrip(']')
-
-    return cls(trad, simp, pinyin)
-
-  def to_dict(self):
-    fields = ['trad', 'simp', 'pinyin']
-    rv = OrderedDict((field, getattr(self, field)) for field in fields if getattr(self, field))
-
-    if rv['simp'] == rv['trad']:
-      del rv['simp']
-
-    return rv
-
-  @classmethod
-  def from_dict(cls, d):
-    return cls(
-      trad=d['trad'],
-      simp=d.get('simp', d['trad']),
-      pinyin=d['pinyin'],
-    )
+  return Classifier(trad, simp, pinyin)
 
 
 def load_cedict_file(fpath):

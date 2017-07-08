@@ -5,7 +5,7 @@ import yaml
 
 try:
   # TODO this is really bad
-  from .cedict import CedictClassifier
+  from .models import Classifier
 except ImportError:
   pass
 
@@ -22,7 +22,7 @@ class VocabWord:
     :param str pinyin: pinyin, e.g. 'nǐ hǎo' (not 'ni3 hao3')
     :param str|None tw_pinyin: Taiwanese pinyin, or None
     :param list[str] defs: list of definitions
-    :param list[cedict.CedictClassifier] clfrs: list of classifiers
+    :param list[Classifier] clfrs: list of classifiers
     :param list[ExampleSentence] example_sentences: list of example sentences
     """
     self.trad = trad
@@ -65,7 +65,7 @@ class VocabWord:
   @classmethod
   def from_dict(cls, d):
     if 'clfrs' in d:
-      d['clfrs'] = [CedictClassifier.from_dict(item) for item in d['clfrs']]
+      d['clfrs'] = [Classifier.from_dict(item) for item in d['clfrs']]
     # TODO support example sentences
     d.pop('example_sentences', None)
 
