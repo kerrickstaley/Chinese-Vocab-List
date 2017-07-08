@@ -32,7 +32,7 @@ def main():
   cd = CedictWithPreferredEntries.load()
   all_simp = {w.simp for w in hl.words + sl.words}
   all_simp_rank = []
-  for simp in all_simp:
+  for simp in sorted(all_simp):
     if simp in hl.word_lists_by_simp:
       hsk_level = min(word.level for word in hl.word_lists_by_simp[simp])
       hsk_rank = HSK_LEVEL_TO_RANK[hsk_level]
