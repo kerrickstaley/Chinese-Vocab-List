@@ -1,6 +1,7 @@
 import sys
 
 from cedict import CedictWithPreferredEntries
+from example_sentences_list import ExampleSentenceList
 from hsk_list import HSKList
 from subtlex_list import LimitedSubtlexList
 from vocab_list import VocabWord, VocabList
@@ -66,7 +67,19 @@ def main():
       example_sentences=[])
     vocab_words.append(vw)
   vocab_list = VocabList(vocab_words)
+
+  example_sentence_list = ExampleSentenceList.load()
+  set_example_sentences(vocab_list, example_sentence_list)
+
   vocab_list.dump_to_file('/dev/stdout')
+
+
+def set_example_sentences(vocab_list, example_sentences_list):
+  for vocab_word in vocab_list.words:
+    if vocab_word.simp in example_sentences_list.simp_to_sents:
+      vocab_word.example_sentences = [
+        example_sentences_list.simp_to_sents[vocab_word.simp][0]
+      ]
 
 
 if __name__ == '__main__' and not hasattr(sys, 'ps1'):

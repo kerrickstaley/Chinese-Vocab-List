@@ -5,7 +5,7 @@ import yaml
 
 try:
   # TODO this is really bad
-  from .models import Classifier
+  from .models import Classifier, ExampleSentence
 except ImportError:
   pass
 
@@ -77,35 +77,6 @@ class VocabWord:
         defs=d['defs'],
         clfrs=d.get('clfrs', []),
         example_sentences=[])
-
-
-class ExampleSentence:
-  def __init__(self, trad, simp, pinyin, eng):
-    """
-    :param str trad: traditional form
-    :param str simp: simplified form
-    :param str pinyin: pinyin, e.g. 'nǐ hǎo' (not 'ni3 hao3')
-    :param str|None eng: English translation
-    """
-    self.trad = trad
-    self.simp = simp
-    self.pinyin = pinyin
-    self.eng = eng
-
-  def __repr__(self):
-    return '{}(trad={}, simp={}, pinyin={}, eng={})'.format(
-      self.__class__.__name__,
-      self.trad,
-      self.simp,
-      self.pinyin,
-      self.eng,
-    )
-
-  def to_dict(self):
-    fields = ['trad', 'simp', 'pinyin', 'eng']
-    rv = OrderedDict((field, getattr(self, field)) for field in fields if getattr(self, field))
-    if rv['simp'] == rv['trad']:
-      del rv['simp']
 
 
 # taken from https://stackoverflow.com/questions/16782112/can-pyyaml-dump-dict-items-in-non-alphabetical-order
