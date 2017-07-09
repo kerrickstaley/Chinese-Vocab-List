@@ -69,3 +69,12 @@ class ExampleSentence:
       del rv['simp']
 
     return rv
+
+  @classmethod
+  def from_dict(cls, d):
+    return cls(
+      trad=d.get('trad'),
+      simp=d.get('simp'),
+      pinyin=d.get('pinyin'),
+      eng=d.get('eng'),
+    )

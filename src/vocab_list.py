@@ -66,8 +66,8 @@ class VocabWord:
   def from_dict(cls, d):
     if 'clfrs' in d:
       d['clfrs'] = [Classifier.from_dict(item) for item in d['clfrs']]
-    # TODO support example sentences
-    d.pop('example_sentences', None)
+    if 'example_sentences' in d:
+      d['example_sentences'] = [ExampleSentence.from_dict(item) for item in d['example_sentences']]
 
     return cls(
         trad=d['trad'],
@@ -76,7 +76,7 @@ class VocabWord:
         tw_pinyin=d.get('tw_pinyin'),
         defs=d['defs'],
         clfrs=d.get('clfrs', []),
-        example_sentences=[])
+        example_sentences=d.get('example_sentences', []))
 
 
 # taken from https://stackoverflow.com/questions/16782112/can-pyyaml-dump-dict-items-in-non-alphabetical-order
