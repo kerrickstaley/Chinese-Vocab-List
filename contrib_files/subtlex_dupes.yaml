@@ -241,3 +241,83 @@
 时: 时候  # HSK
 已: 已经  # HSK
 情: 感情  # HSK
+基: 基础  # HSK
+它们: 它
+那时:
+  - 那
+  - 时
+得到: 到
+拿走:
+  - 拿
+  - 走
+词: 詞語  # HSK
+再次:
+  - 再
+  - 次
+算是: 算
+蛋: 雞蛋  # HSK
+一半: 半
+杀死:
+  - 杀
+  - 死
+因:  # can learn this word by inference from two words in HSK
+  - 因为
+  - 原因
+到来: null
+有些: 些
+边:  # can learn this by inference from 3 words in HSK
+  - 旁边
+  - 左边
+  - 右边
+那种: 种
+什么样:
+  - 什么
+  - 样
+只能:
+  - 只
+  - 能
+可不: null
+上面:
+  - 上
+  - 面
+名: 名子
+最高:
+  - 最
+  - 高
+这里: null
+感到: 感
+最新:
+  - 最
+  - 新
+里面:
+  - 里
+  - 面
+或: 或者
+交给:
+  - 交
+  - 给
+后:
+  - 后面
+  - 然后
+  - 后来
+眼:
+  - 眼睛
+不可: null
+刚刚: 刚才  # HSK
+这样: 样
+今晚:
+  - 今天  # HSK
+  - 晚上  # HSK
+身: 身体  # HSK
+怎: 怎么  # HSK
+这边: null  # see 边 above
+大多数: 数
+玩笑: 开玩笑  # HSK
+开车:
+  - 开
+  - 车
+北方: 北  # actually map the HSK word to a simpler form since the 北方 usage seems really uncommon (also all 3 other
+         # cardinal directions appear as a single character in HSK, not sure why HSK lists 北方)
+有点: 点
+上去: null
+需: 需要  # HSK
