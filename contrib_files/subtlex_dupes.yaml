@@ -228,6 +228,8 @@
 兴趣: 感兴趣  # HSK
 你们: null  # given that 我们 and 你 appear in the list we don't really need this
 他们: null  # given that 我们 and 他 appear in the list we don't really need this
+她们: null  # ""
+人们: 人  # ""
 们: null  # dupe of 我们
 好事: 事
 调: 调查  # TODO don't really know if this is used on its own or only as an abbreviation
@@ -321,3 +323,23 @@
 有点: 点
 上去: null
 需: 需要  # HSK
+从没:
+  - 从
+  - 没
+有时:
+  - 有
+  - 时间
+有时候:
+  - 有
+  - 时候
+同样:
+  - 同
+  - 样
+赢得:
+  - 赢
+  - 得
+戏:
+  - 游戏
+谈话:
+  - 谈
+  - 话
