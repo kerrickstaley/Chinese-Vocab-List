@@ -646,3 +646,27 @@
   pinyin: xiang4
 分子:
   trad: 份子
+结:
+  pinyin: jie2
+呐:
+  pinyin: na5
+尸:
+  trad: 屍
+合:
+  trad: 合
+  pinyin: he2
+撒:
+  pinyin: sa3
+# TODO I think the other entry in CC-CEDICT is wrong, confirm
+罢了:
+  pinyin: ba4 le5
+泡:
+  pinyin: pao4
+# TODO: not sure this is the best entry
+咯:
+  pinyin: ge1
+好玩:
+  pinyin: hao3 wan2
+# TODO: not sure this is the best entry
+唯:
+  pinyin: wei2
