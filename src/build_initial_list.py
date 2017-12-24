@@ -17,6 +17,7 @@ HSK_LEVEL_TO_RANK = {
   5: 1200 + 1300 / 2,
   6: 2500 + 2500 / 2,
 }
+NUM_WORDS_TO_GENERATE = 2500
 
 
 def combine_hsk_subtlex_ranks(hsk_rank, subtlex_rank):
@@ -50,7 +51,7 @@ def main():
   all_simp_rank.sort(key=lambda pair: pair[1])
 
   vocab_words = []
-  for simp, _ in all_simp_rank[:2500]:
+  for simp, _ in all_simp_rank[:NUM_WORDS_TO_GENERATE]:
     try:
       entry = cd.words_by_simp[simp]
     except KeyError:
