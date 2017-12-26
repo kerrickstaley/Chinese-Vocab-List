@@ -358,3 +358,17 @@
   - 症状
 雨:
   - 下雨
+经:
+  - 经典
+怕:
+  - 害怕
+那么:
+  - 那
+  - 怎么
+# can infer this word's meaning from some other words in HSK
+同:
+  - 同意
+  - 同时
+  - 相同
+死去:
+  - 死
