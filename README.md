@@ -1,2 +1,2 @@
-# Chinese Learner's Word List
-This is a list of Chinese words in order of most to least useful for Chinese learners.
+# Chinese Vocab List
+Nothing to see here right now, move along...
