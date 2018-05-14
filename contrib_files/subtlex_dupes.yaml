@@ -386,3 +386,42 @@
 心里:
   - 心
   - 里
+# can infer this word's meaning from some other words in HSK
+飞:
+  - 飞机
+  - 起飞
+# can infer this word's meaning from some other words in HSK
+球:
+  - 打篮球
+  - 踢足球
+  - 地球
+# can infer this word's meaning from some other words in HSK
+成:
+  - 完成
+  - 成为
+  - 成果
+# can infer this word's meaning from some other words in HSK
+# also it's probably better learned as a gramatical concept rather than a vocab word
+前:
+  - 前面
+  - 以前
+睡: 睡觉
+# bunch of erhua words
+哪儿: 哪里
+那儿: 那里
+一会儿: 一会
+使劲儿: 使劲
+干活儿: 干活
+# suspect 头儿 also belongs on this list, but I'm not familiar with it
+进来:
+  - 进
+  - 来
+想起:
+  - 想
+  - 起
+# particle that is better learned as distinct words
+埋:
+  - 埋伏
+  - 埋没
+  - 埋葬
+  - 埋
