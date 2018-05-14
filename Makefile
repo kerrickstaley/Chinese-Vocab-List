@@ -26,5 +26,5 @@ build/setup.py: setup.py
 	mkdir -p build
 	cp "$<" "$@"
 
-chinese_vocab_list.yaml: src/*
+chinese_vocab_list.yaml: src/* reference_files/* contrib_files/*
 	python3 src/build_initial_list.py > "$@"
