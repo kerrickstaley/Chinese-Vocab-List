@@ -422,7 +422,6 @@
     eng: Yes, I know it.
 - trad: 和
   pinyin: hé
-  tw_pinyin: han4] when it means "and" or "with"
   defs:
   - and
   - together with
@@ -431,6 +430,7 @@
   - union
   - peace
   - harmony
+  tw_pinyin: han4] when it means "and" or "with"
   example_sentences:
   - trad: 你和我是好朋友。
     pinyin: nǐ hé wǒ shì hǎo péngyǒu 。
@@ -863,7 +863,6 @@
     eng: I'm very well, thank you.
 - trad: 多
   pinyin: duō
-  tw_pinyin: duo2] when it means "how"
   defs:
   - many
   - much
@@ -874,6 +873,7 @@
   - in excess
   - how (to what extent)
   - multi-
+  tw_pinyin: duo2] when it means "how"
   example_sentences:
   - trad: 我們對你知道得不多。
     simp: 我们对你知道得不多。
@@ -3389,7 +3389,6 @@
     eng: Hmm.
 - trad: 行
   pinyin: xíng
-  tw_pinyin: xing4] for the behavior-conduct sense
   defs:
   - to walk
   - to go
@@ -3409,6 +3408,7 @@
   - will do
   - behavior
   - conduct
+  tw_pinyin: xing4] for the behavior-conduct sense
   example_sentences:
   - trad: 那麼, 讓我們開始進行吧。
     simp: 那么, 让我们开始进行吧。
@@ -8600,10 +8600,10 @@
     eng: Maybe I should go help Tom.
 - trad: 叔叔
   pinyin: shū shu
-  tw_pinyin: shú shu
   defs:
   - father's younger brother
   - uncle
+  tw_pinyin: shú shu
   clfrs:
   - trad: 個
     simp: 个
@@ -10738,10 +10738,10 @@
 - trad: 著急
   simp: 着急
   pinyin: zháo jí
-  tw_pinyin: zhāo jí
   defs:
   - to worry
   - to feel anxious
+  tw_pinyin: zhāo jí
 - trad: 能力
   pinyin: néng lì
   defs:
@@ -21181,11 +21181,11 @@
     eng: He is in poor health.
 - trad: 垃圾桶
   pinyin: lā jī tǒng
-  tw_pinyin: lè sè tǒng
   defs:
   - rubbish bin
   - trash can
   - garbage can
+  tw_pinyin: lè sè tǒng
 - trad: 心臟
   simp: 心脏
   pinyin: xīn zàng
@@ -21214,10 +21214,10 @@
     eng: My boss made me work overtime.
 - trad: 似的
   pinyin: shì de
-  tw_pinyin: sì de
   defs:
   - seems as if
   - rather like
+  tw_pinyin: sì de
   example_sentences:
   - trad: 幸福的家庭都是相似的，不幸的家庭卻各有各的不幸。
     simp: 幸福的家庭都是相似的，不幸的家庭却各有各的不幸。
@@ -22412,11 +22412,11 @@
 - trad: 說服
   simp: 说服
   pinyin: shuō fú
-  tw_pinyin: shuì fú
   defs:
   - to persuade
   - to convince
   - to talk sb over
+  tw_pinyin: shuì fú
   example_sentences:
   - trad: 我終於說服了他買它。
     simp: 我终于说服了他买它。
@@ -23107,12 +23107,12 @@
   - without delay
 - trad: 匹
   pinyin: pǐ
-  tw_pinyin: pī
   defs:
   - classifier for horses, mules etc
   - ordinary person
   - 'classifier for cloth: bolt'
   - horsepower
+  tw_pinyin: pī
   example_sentences:
   - trad: 這隻狗長的像匹馬。
     simp: 这只狗长的像匹马。
@@ -25004,12 +25004,12 @@
     eng: The company invested a lot of money in this project.
 - trad: 成熟
   pinyin: chéng shú
-  tw_pinyin: chéng shóu
   defs:
   - mature
   - ripe
   - to mature
   - to ripen
+  tw_pinyin: chéng shóu
 - trad: 表明
   pinyin: biǎo míng
   defs:
@@ -26579,12 +26579,12 @@
     eng: The third quarter GNP growth was 1% over the preceding quarter.
 - trad: 垃圾
   pinyin: lā jī
-  tw_pinyin: lè sè
   defs:
   - trash
   - refuse
   - garbage
   - (coll.) of poor quality
+  tw_pinyin: lè sè
   example_sentences:
   - trad: 第二天早上，狄馬從垃圾箱裏走了出來，但卻發現自己全身的衣服都沾上了垃圾的臭味。
     simp: 第二天早上，狄马从垃圾箱里走了出来，但却发现自己全身的衣服都沾上了垃圾的臭味。
@@ -28053,9 +28053,9 @@
     eng: Perhaps you are right, I have been selfish.
 - trad: 艘
   pinyin: sōu
-  tw_pinyin: sāo
   defs:
   - classifier for ships
+  tw_pinyin: sāo
   example_sentences:
   - trad: 他們警告過這艘船這個危險。
     simp: 他们警告过这艘船这个危险。
@@ -32355,7 +32355,6 @@
 - trad: 亞
   simp: 亚
   pinyin: yà
-  tw_pinyin: yǎ
   defs:
   - Asia
   - Asian
@@ -32363,6 +32362,7 @@
   - next to
   - inferior
   - sub-
+  tw_pinyin: yǎ
   example_sentences:
   - trad: 瑪莉亞既不知道他的名字，也不知道他的電話號碼。
     simp: 玛莉亚既不知道他的名字，也不知道他的电话号码。
@@ -35562,13 +35562,13 @@
       to Mexico enjoyable.
 - trad: 悄悄
   pinyin: qiāo qiāo
-  tw_pinyin: qiǎo qiǎo
   defs:
   - quietly
   - secretly
   - stealthily
   - quiet
   - worried
+  tw_pinyin: qiǎo qiǎo
   example_sentences:
   - trad: 他靜悄悄地走出了房間，誰也沒有發現。
     simp: 他静悄悄地走出了房间，谁也没有发现。
@@ -36166,9 +36166,9 @@
 - trad: 噸
   simp: 吨
   pinyin: dūn
-  tw_pinyin: dùn
   defs:
   - ton (loanword)
+  tw_pinyin: dùn
   example_sentences:
   - trad: 貨車的載貨量超過了三噸。
     simp: 货车的载货量超过了三吨。
@@ -42631,11 +42631,11 @@
 - trad: 擊
   simp: 击
   pinyin: jī
-  tw_pinyin: jí
   defs:
   - to hit
   - to strike
   - to break
+  tw_pinyin: jí
   example_sentences:
   - trad: 我們沒有打算要攻擊他。
     simp: 我们没有打算要攻击他。
@@ -43443,9 +43443,9 @@
 - trad: 著涼
   simp: 着凉
   pinyin: zháo liáng
-  tw_pinyin: zhāo liáng
   defs:
   - to catch cold
+  tw_pinyin: zhāo liáng
 - trad: 硬件
   pinyin: yìng jiàn
   defs:
@@ -43483,13 +43483,13 @@
 - trad: 粘貼
   simp: 粘贴
   pinyin: zhān tiē
-  tw_pinyin: nián tiē
   defs:
   - to stick
   - to affix
   - to adhere
   - to paste (as in "copy and paste")
   - also written 黏貼|黏贴[nian2 tie1]
+  tw_pinyin: nián tiē
 - trad: 繁榮
   simp: 繁荣
   pinyin: fán róng
