@@ -78,6 +78,9 @@ class VocabWord:
         clfrs=d.get('clfrs'),
         example_sentences=d.get('example_sentences'))
 
+  def __eq__(self, other):
+    return self.to_dict() == other.to_dict()
+
 
 # taken from https://stackoverflow.com/questions/16782112/can-pyyaml-dump-dict-items-in-non-alphabetical-order
 def represent_ordereddict(dumper, data):
