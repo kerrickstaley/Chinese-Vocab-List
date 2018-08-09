@@ -15,38 +15,38 @@ VOCAB_FILE = os.path.join(
 
 
 class VocabWord:
-  def __init__(self, trad, simp, pinyin, tw_pinyin, defs, clfrs, example_sentences):
+  def __init__(self, trad, simp, pinyin, defs, tw_pinyin=None, clfrs=None, example_sentences=None):
     """
     :param str trad: traditional form
     :param str simp: simplified form
     :param str pinyin: pinyin, e.g. 'nǐ hǎo' (not 'ni3 hao3')
-    :param str|None tw_pinyin: Taiwanese pinyin, or None
     :param list[str] defs: list of definitions
-    :param list[Classifier] clfrs: list of classifiers
-    :param list[ExampleSentence] example_sentences: list of example sentences
+    :param str|None tw_pinyin: Taiwanese pinyin, or None
+    :param list[Classifier]|None clfrs: list of classifiers
+    :param list[ExampleSentence]|None example_sentences: list of example sentences
     """
     self.trad = trad
     self.simp = simp
     self.pinyin = pinyin
-    self.tw_pinyin = tw_pinyin
     self.defs = defs
-    self.clfrs = clfrs
-    self.example_sentences = example_sentences
+    self.tw_pinyin = tw_pinyin
+    self.clfrs = clfrs or []
+    self.example_sentences = example_sentences or []
 
   def __repr__(self):
-    return '{}(trad={}, simp={}, pinyin={}, tw_pinyin={}, defs={}, clfrs={}, example_sentences={})'.format(
+    return '{}(trad={}, simp={}, pinyin={}, defs={}, tw_pinyin={}, clfrs={}, example_sentences={})'.format(
       self.__class__.__name__,
       self.trad,
       self.simp,
       self.pinyin,
-      self.tw_pinyin,
       self.defs,
+      self.tw_pinyin,
       self.clfrs,
       self.example_sentences,
     )
 
   def to_dict(self):
-    fields = ['trad', 'simp', 'pinyin', 'tw_pinyin', 'defs', 'clfrs', 'example_sentences']
+    fields = ['trad', 'simp', 'pinyin', 'defs', 'tw_pinyin', 'clfrs', 'example_sentences']
     rv = []
     for field in fields:
       val = getattr(self, field)
@@ -73,10 +73,10 @@ class VocabWord:
         trad=d['trad'],
         simp=d.get('simp', d['trad']),
         pinyin=d['pinyin'],
-        tw_pinyin=d.get('tw_pinyin'),
         defs=d['defs'],
-        clfrs=d.get('clfrs', []),
-        example_sentences=d.get('example_sentences', []))
+        tw_pinyin=d.get('tw_pinyin'),
+        clfrs=d.get('clfrs'),
+        example_sentences=d.get('example_sentences'))
 
 
 # taken from https://stackoverflow.com/questions/16782112/can-pyyaml-dump-dict-items-in-non-alphabetical-order
