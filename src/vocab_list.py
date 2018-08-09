@@ -36,13 +36,13 @@ class VocabWord:
   def __repr__(self):
     return '{}(trad={}, simp={}, pinyin={}, defs={}, tw_pinyin={}, clfrs={}, example_sentences={})'.format(
       self.__class__.__name__,
-      self.trad,
-      self.simp,
-      self.pinyin,
-      self.defs,
-      self.tw_pinyin,
-      self.clfrs,
-      self.example_sentences,
+      repr(self.trad),
+      repr(self.simp),
+      repr(self.pinyin),
+      repr(self.defs),
+      repr(self.tw_pinyin),
+      repr(self.clfrs),
+      repr(self.example_sentences),
     )
 
   def to_dict(self):
