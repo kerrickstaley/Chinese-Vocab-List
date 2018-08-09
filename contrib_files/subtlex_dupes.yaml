@@ -440,3 +440,24 @@
   - 相同
   - 互相
   - 相对
+# particle that is better learned as distinct words
+夫:
+  - 丈夫
+  - 大夫
+# particle that is better learned as distinct words
+觉:
+  - 睡觉
+  - 觉得
+# particle that is better learned as distinct words
+证:
+  - 保证
+# particle that is better learned as distinct words
+注:
+  - 注意
+# particle that is better learned as distinct words
+服:
+  - 衣服
+# particle that is better learned as distinct words
+游:
+  - 游泳
+  - 旅游
