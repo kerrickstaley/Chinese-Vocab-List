@@ -101,7 +101,7 @@ yaml.add_representer(OrderedDict, represent_ordereddict)
 class VocabList:
   @classmethod
   def load(cls):
-    with open(VOCAB_FILE) as h:
+    with open(VOCAB_FILE, encoding='utf-8') as h:
       words = [VocabWord.from_dict(d) for d in yaml.load(h)]
       return VocabList(words)
 
