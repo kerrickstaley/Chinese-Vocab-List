@@ -10,11 +10,11 @@ install: build/chinese_vocab_list/__init__.py build/chinese_vocab_list/models.py
 		build/chinese_vocab_list/chinese_vocab_list.yaml
 	cd build; sudo python3 setup.py install
 
-build/chinese_vocab_list/__init__.py: src/vocab_list.py
+build/chinese_vocab_list/__init__.py: chinese_vocab_list/__init__.py
 	mkdir -p build/chinese_vocab_list/
 	cp "$<" "$@"
 
-build/chinese_vocab_list/models.py: src/models.py
+build/chinese_vocab_list/models.py: chinese_vocab_list/models.py
 	mkdir -p build/chinese_vocab_list/
 	cp "$<" "$@"
 
@@ -26,5 +26,7 @@ build/setup.py: setup.py
 	mkdir -p build
 	cp "$<" "$@"
 
-chinese_vocab_list.yaml: src/* reference_files/* contrib_files/*
-	python3 src/build_initial_list.py > "$@"
+chinese_vocab_list.yaml: src/* reference_files/* contrib_files/* chinese_vocab_list/*
+	$(eval tempfile := $(shell mktemp))
+	PYTHONPATH=".:${PYTHONPATH}" python3 src/build_initial_list.py > "${tempfile}"
+	cp "${tempfile}" "$@"

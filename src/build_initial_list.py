@@ -1,10 +1,10 @@
 import sys
 
+from chinese_vocab_list import VocabWord, VocabList
 from cedict import CedictWithPreferredEntries
 from example_sentences_list import ExampleSentenceList
 from hsk_list import HSKList
 from subtlex_list import LimitedSubtlexList
-from vocab_list import VocabWord, VocabList
 
 HSK_WEIGHT = 1
 SUBTLEX_WEIGHT = 1
