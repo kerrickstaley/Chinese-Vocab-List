@@ -1,13 +1,13 @@
 from setuptools import setup
 
-setup(name='chinese_vocab_list',
+setup(name='chinesevocablist',
       version='0.3.0',
       description='Programmatic interface to the Chinese Vocab List',
-      url='http://github.com/kerrickstaley/chinese_vocab_list',
+      url='http://github.com/kerrickstaley/chinesevocablist',
       author='Kerrick Staley',
       author_email='k@kerrickstaley.com',
       license='MIT',
-      packages=['chinese_vocab_list'],
+      packages=['chinesevocablist'],
       zip_safe=False,
       install_requires=[
         'pyyaml>=3.12',

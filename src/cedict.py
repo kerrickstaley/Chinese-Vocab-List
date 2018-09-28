@@ -3,7 +3,7 @@ import re
 
 import yaml
 
-from chinese_vocab_list.models import Classifier
+from chinesevocablist.models import Classifier
 
 
 def toned_char(c, tone):

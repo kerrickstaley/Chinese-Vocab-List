@@ -1,6 +1,6 @@
 import yaml
 
-from chinese_vocab_list.models import ExampleSentence
+from chinesevocablist.models import ExampleSentence
 
 
 def load_tatoeba_example_sentences_file(fpath):

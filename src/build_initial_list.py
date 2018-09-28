@@ -1,6 +1,6 @@
 import sys
 
-from chinese_vocab_list import VocabWord, VocabList
+from chinesevocablist import VocabWord, VocabList
 from cedict import CedictWithPreferredEntries
 from example_sentences_list import ExampleSentenceList
 from hsk_list import HSKList
