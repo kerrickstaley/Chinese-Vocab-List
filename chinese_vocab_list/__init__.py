@@ -1,4 +1,5 @@
 from collections import OrderedDict
+import importlib
 import os.path
 
 import yaml
@@ -97,7 +98,12 @@ yaml.add_representer(OrderedDict, represent_ordereddict)
 class VocabList:
   @classmethod
   def load(cls):
-    with open(VOCAB_FILE, encoding='utf-8') as h:
+    vocab_list_data = importlib.__import__(f'{__name__}.vocab_list_data', globals=globals()).vocab_list_data
+    return vocab_list_data.vocab_list
+
+  @classmethod
+  def load_from_yaml(cls, yaml_file_path):
+    with open(yaml_file_path, encoding='utf-8') as h:
       words = [VocabWord.from_dict(d) for d in yaml.load(h)]
       return VocabList(words)
 
@@ -109,7 +115,10 @@ class VocabList:
       self.simp_to_word[word.simp] = word
       self.trad_to_word[word.trad] = word
 
-  def dump_to_file(self, fpath):
+  def dump_to_yaml(self, yaml_file_path):
     data = [word.to_dict() for word in self.words]
-    with open(fpath, 'w') as h:
+    with open(yaml_file_path, 'w') as h:
       yaml.dump(data, h, allow_unicode=True, default_flow_style=False)
+
+  def __repr__(self):
+    return 'VocabList(words={})'.format(repr(self.words))

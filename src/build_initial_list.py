@@ -72,7 +72,7 @@ def main():
   example_sentence_list = ExampleSentenceList.load()
   set_example_sentences(vocab_list, example_sentence_list)
 
-  vocab_list.dump_to_file('/dev/stdout')
+  vocab_list.dump_to_yaml('/dev/stdout')
 
 
 def set_example_sentences(vocab_list, example_sentences_list):
