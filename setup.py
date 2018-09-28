@@ -8,7 +8,6 @@ setup(name='chinese_vocab_list',
       author_email='k@kerrickstaley.com',
       license='MIT',
       packages=['chinese_vocab_list'],
-      package_data={'chinese_vocab_list': ['chinese_vocab_list.yaml']},
       zip_safe=False,
       install_requires=[
         'pyyaml>=3.12',
