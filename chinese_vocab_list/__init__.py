@@ -3,11 +3,7 @@ import os.path
 
 import yaml
 
-try:
-  # TODO this is really bad
-  from .models import Classifier, ExampleSentence
-except ImportError:
-  pass
+from .models import Classifier, ExampleSentence
 
 VOCAB_FILE = os.path.join(
   os.path.dirname(os.path.abspath(__file__)),
