@@ -1,13 +1,16 @@
-# available targets:
-# - regen: regenerates the file chinese_vocab_list.yaml
-# - install: installs the library locally
-
-.PHONY: regen
-regen: chinese_vocab_list.yaml
-
 .PHONY: install
 install: chinesevocablist/* chinesevocablist/vocab_list_data.py
 	python3 setup.py install --user
+
+.PHONY: publish_test
+publish_test: chinesevocablist/vocab_list_data.py
+	python3 setup.py sdist bdist_wheel
+	twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+
+.PHONY: publish_real
+publish_real: chinesevocablist/vocab_list_data.py
+	python3 setup.py sdist bdist_wheel
+	twine upload dist/*
 
 chinesevocablist/vocab_list_data.py: chinesevocablist/__init__.py \
 		chinesevocablist/models.py src/generate_vocab_list_data.py chinese_vocab_list.yaml
