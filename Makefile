@@ -4,11 +4,13 @@ install: chinesevocablist/* chinesevocablist/vocab_list_data.py
 
 .PHONY: publish_test
 publish_test: chinesevocablist/vocab_list_data.py
+	rm -rf dist
 	python3 setup.py sdist bdist_wheel
 	twine upload --repository-url https://test.pypi.org/legacy/ dist/*
 
 .PHONY: publish_real
 publish_real: chinesevocablist/vocab_list_data.py
+	rm -rf dist
 	python3 setup.py sdist bdist_wheel
 	twine upload dist/*
 
