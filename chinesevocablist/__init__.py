@@ -6,6 +6,8 @@ import yaml
 
 from .models import Classifier, ExampleSentence
 
+__version__ = '0.3.2'
+
 VOCAB_FILE = os.path.join(
   os.path.dirname(os.path.abspath(__file__)),
   'chinese_vocab_list.yaml')

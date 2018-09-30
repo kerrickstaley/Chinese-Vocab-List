@@ -1,7 +1,8 @@
 from setuptools import setup
+from chinesevocablist import __version__
 
 setup(name='chinesevocablist',
-      version='0.3.1',
+      version=__version__,
       description='Programmatic interface to the Chinese Vocab List',
       url='http://github.com/kerrickstaley/Chinese-Vocab-List',
       author='Kerrick Staley',
