@@ -2,6 +2,10 @@
 install: chinesevocablist/* chinesevocablist/vocab_list_data.py
 	python3 setup.py install --user
 
+.PHONY: install_travis
+install_travis: chinesevocablist/* chinesevocablist/vocab_list_data.py
+	python3 setup.py install
+
 .PHONY: publish_test
 publish_test: chinesevocablist/vocab_list_data.py
 	rm -rf dist

@@ -3,6 +3,8 @@ A list of Chinese vocabulary words with definitions, pronunciations, and example
 
 Used by the Chinese Prestudy Anki addon. See [this blog post](https://www.kerrickstaley.com/2018/09/04/chinese-prestudy) for more details.
 
+[![Build Status](https://travis-ci.org/kerrickstaley/Chinese-Vocab-List.svg?branch=master)](https://travis-ci.org/kerrickstaley/Chinese-Vocab-List)
+
 ## Contributing
 There are a few ways to contribute:
 * Making changes to the source code in `src/`.
