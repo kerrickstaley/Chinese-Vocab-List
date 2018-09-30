@@ -1,9 +1,19 @@
 .PHONY: install
-install: chinesevocablist/* chinesevocablist/vocab_list_data.py
+install: chinesevocablist/*
+	# install deps
+	pip install -e . --user
+	# make chinesevocablist/vocab_list_data.py file
+	make chinesevocablist/vocab_list_data.py
+	# do install
 	python3 setup.py install --user
 
-.PHONY: install_travis
-install_travis: chinesevocablist/* chinesevocablist/vocab_list_data.py
+.PHONY: install_venv
+install_venv: chinesevocablist/*
+	# install deps
+	pip install -e .
+	# make chinesevocablist/vocab_list_data.py file
+	make chinesevocablist/vocab_list_data.py
+	# do install
 	python3 setup.py install
 
 .PHONY: publish_test
