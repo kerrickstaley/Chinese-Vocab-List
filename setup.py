@@ -1,8 +1,11 @@
 from setuptools import setup
-from chinesevocablist import __version__
+
+version = {}
+with open('chinesevocablist/version.py') as fp:
+  exec(fp.read(), version)
 
 setup(name='chinesevocablist',
-      version=__version__,
+      version=version['__version__'],
       description='Programmatic interface to the Chinese Vocab List',
       url='http://github.com/kerrickstaley/Chinese-Vocab-List',
       author='Kerrick Staley',

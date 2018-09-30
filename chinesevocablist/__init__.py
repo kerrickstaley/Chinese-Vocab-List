@@ -6,7 +6,7 @@ import yaml
 
 from .models import Classifier, ExampleSentence
 
-__version__ = '0.3.2'
+from .version import __version__
 
 
 class VocabWord:
