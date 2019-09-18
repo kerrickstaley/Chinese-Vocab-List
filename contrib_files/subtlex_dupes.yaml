@@ -531,3 +531,86 @@
 天:
   - 今天
   - 明天
+没事:
+  - 没
+  - 事
+没事儿:
+  - 没
+  - 事
+放手:
+  - 放
+  - 手
+# 流 is better learned as a component of the various words that contain it
+流: null
+接下来:
+  - 接
+  - 下
+  - 来
+# 解 is better learned as a component of the words that contain it
+解: null
+# Even though 日子 is in HSK, it's similar enough to 日 to exclude
+日子: 日
+美女:
+  - 美
+  - 女
+第五:
+  - 第
+  - 五
+史: 历史
+飞行:
+  - 飞机
+  - 起飞
+保: 保护
+走开:
+  - 走
+  - 开
+卡: 信用卡
+大人:
+  - 大
+  - 人
+有效:
+  - 有
+  - 效果
+  - 效率
+穿过:
+  - 穿
+  - 过
+压: 压力
+比尔: null
+# Even though 装 is in HSK wordlist, it is better learned as part of words that contain it
+装: null
+器: 机器
+# 合 is better learned as a part of words that contain it
+合: null
+哥们: 哥哥
+# Even though 后果 is in HSK, its meaning is obvious if you know what 果 means
+后果:
+  - 结果
+  - 效果
+文: 文化
+发出:
+  - 发
+  - 出
+司: 公司
+# 等候 is in HSK but is not worth learning because you can infer from 等
+等候: 等
+有意思: 意思
+唱: 唱歌
+血液:
+  - 血
+  - 液
+的话:
+  - 的
+  - 话
+# 直 is in HSK but can be inferred from the many words that contain it such as 直接
+直: 直接
+# 动力 is in HSK but can be inferred from 动 and 力
+动力:
+  - 动作
+  - 力气
+结:
+  - 结婚
+  - 结束
+差点:
+  - 差
+  - 点
