@@ -1,5 +1,5 @@
 # Chinese Vocab List
-A list of Chinese vocabulary words with definitions, pronunciations, and example sentences. Under a CC-BY-SA license. See `chinese_vocab_list.yaml` for the list itself.
+A list of Chinese vocabulary words with definitions, pronunciations, and example sentences. Under a CC-BY-SA license. See [chinese_vocab_list.yaml](https://raw.githubusercontent.com/kerrickstaley/Chinese-Vocab-List/master/chinese_vocab_list.yaml) for the list itself.
 
 Used by the Chinese Prestudy Anki addon. See [this blog post](https://www.kerrickstaley.com/2018/09/04/chinese-prestudy) for more details.
 
