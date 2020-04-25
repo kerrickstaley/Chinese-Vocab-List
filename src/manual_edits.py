@@ -113,3 +113,16 @@ def get_manual_edits():
                 trad_to_edit[edit.trad] = edit
     
     return list(trad_to_edit.values())
+
+
+def apply_manual_edits(vocab_list, manual_edits=None):
+    """
+    Apply manual_edits to a VocabList.
+
+    If manual_edits is not passed, it will be computed from commit history using get_manual_edits.
+    """
+    if manual_edits is None:
+        manual_edits = get_manual_edits
+    
+    for edit in manual_edits:
+        edit.apply_to_vocab_word(vocab_list.trad_to_word[edit.trad])
