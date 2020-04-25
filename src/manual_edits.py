@@ -6,7 +6,7 @@ _VOCAB_LIST_FILE = 'chinese_vocab_list.yaml'
 
 
 class ManualEdit:
-    def __init__(trad, defs=None, example_sentences=None):
+    def __init__(self, trad, defs=None, example_sentences=None):
         """
         Set defs to update defs, or leave as None to use default defs. Same for example_sentences.
 
@@ -42,21 +42,27 @@ class ManualEdit:
             example_sentences=other.example_sentences if other.example_sentences is not None
                               else self.example_sentences)
 
+    def __repr__(self):
+        return '{}({}, defs={}, example_sentences={})'.format(
+            self.__class__.__name__,
+            self.trad,
+            self.defs,
+            self.example_sentences)
 
 def _get_manual_edits_for_commit(commit):
     # Note: This is slow. We could cache the result if it becomes a problem.
     before_list = VocabList.load_from_yaml_str(
         subprocess.check_output([
-            'git'
+            'git',
             'show',
             '{}^:chinese_vocab_list.yaml'.format(commit),
         ]).decode('utf8')
     )
     after_list = VocabList.load_from_yaml_str(
         subprocess.check_output([
-            'git'
+            'git',
             'show',
-            '{}^:chinese_vocab_list.yaml'.format(commit),
+            '{}:chinese_vocab_list.yaml'.format(commit),
         ]).decode('utf8')
     )
 

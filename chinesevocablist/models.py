@@ -37,6 +37,12 @@ class Classifier:
       repr(self.simp),
       repr(self.pinyin),
     )
+  
+  def __eq__(self, other):
+    if not isinstance(other, Classifier):
+      raise TypeError('Cannot compare {} and {}'.format(self.__class__.__name__, other.__class__.__name__))
+
+    return self.trad == other.trad and self.simp == other.simp and self.pinyin == other.pinyin
 
 
 class ExampleSentence:
@@ -78,3 +84,10 @@ class ExampleSentence:
       pinyin=d.get('pinyin'),
       eng=d.get('eng'),
     )
+  
+  def __eq__(self, other):
+    if not isinstance(other, ExampleSentence):
+      raise TypeError('Cannot compare {} and {}'.format(self.__class__.__name__, other.__class__.__name__))
+
+    return (
+      self.trad == other.trad and self.simp == other.simp and self.pinyin == other.pinyin and self.eng == other.eng)
