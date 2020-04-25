@@ -5,6 +5,7 @@ from cedict import CedictWithPreferredEntries
 from example_sentences_list import ExampleSentenceList
 from hsk_list import HSKList
 from subtlex_list import LimitedSubtlexList
+from manual_edits import apply_manual_edits
 
 HSK_WEIGHT = 1
 SUBTLEX_WEIGHT = 1
@@ -71,6 +72,8 @@ def main():
 
   example_sentence_list = ExampleSentenceList.load()
   set_example_sentences(vocab_list, example_sentence_list)
+
+  apply_manual_edits(vocab_list)
 
   vocab_list.dump_to_yaml_file('/dev/stdout')
 
