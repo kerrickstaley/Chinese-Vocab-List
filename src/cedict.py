@@ -182,7 +182,7 @@ class CedictWithPreferredEntries(Cedict):
   @staticmethod
   def load_preferred_entries_file(fpath):
     with open(fpath) as h:
-      return yaml.load(h)
+      return yaml.full_load(h)
 
   def pick_entry(self, simp=None, trad=None):
     if bool(simp) == bool(trad):

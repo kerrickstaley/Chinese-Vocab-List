@@ -190,7 +190,7 @@ class DedupedSubtlexList(FilteredSubtlexList):
   @staticmethod
   def load_dupes_file(fpath):
     with open(fpath) as h:
-      return yaml.load(h)
+      return yaml.full_load(h)
 
   def __init__(self, words, cedict, dupes):
     super().__init__(words, cedict)
