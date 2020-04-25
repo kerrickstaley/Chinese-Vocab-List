@@ -6,7 +6,7 @@ YAML parser, plus you don't have to convert from basic Python types into VocabWo
 """
 from chinesevocablist import VocabList
 
-vocab_list = VocabList.load_from_yaml('chinese_vocab_list.yaml')
+vocab_list = VocabList.load_from_yaml_file('chinese_vocab_list.yaml')
 
 print('from chinesevocablist import VocabList, VocabWord, ExampleSentence, Classifier')
 print('vocab_list = {}'.format(repr(vocab_list)))

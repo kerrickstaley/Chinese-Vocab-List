@@ -15,7 +15,7 @@ def load_tatoeba_example_sentences_file(fpath):
   rv = []
 
   with open(fpath) as f:
-    data = yaml.load(f)
+    data = yaml.full_load(f)
     for item in data:
       rv.append(ExampleSentence(trad=item['trad'], simp=item['simp'], pinyin=item['pinyin'], eng=item['eng']))
 

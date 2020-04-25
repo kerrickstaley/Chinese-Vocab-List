@@ -100,10 +100,15 @@ class VocabList:
     return vocab_list_data.vocab_list
 
   @classmethod
-  def load_from_yaml(cls, yaml_file_path):
+  def load_from_yaml_str(cls, yaml_str):
+    words = [VocabWord.from_dict(d) for d in yaml.full_load(yaml_str)]
+    return VocabList(words)
+
+  @classmethod
+  def load_from_yaml_file(cls, yaml_file_path):
     with open(yaml_file_path, encoding='utf-8') as h:
-      words = [VocabWord.from_dict(d) for d in yaml.load(h)]
-      return VocabList(words)
+      words = [VocabWord.from_dict(d) for d in yaml.full_load(h)]
+    return VocabList(words)
 
   def __init__(self, words):
     self.words = words
@@ -113,7 +118,7 @@ class VocabList:
       self.simp_to_word[word.simp] = word
       self.trad_to_word[word.trad] = word
 
-  def dump_to_yaml(self, yaml_file_path):
+  def dump_to_yaml_file(self, yaml_file_path):
     data = [word.to_dict() for word in self.words]
     with open(yaml_file_path, 'w') as h:
       yaml.dump(data, h, allow_unicode=True, default_flow_style=False)
