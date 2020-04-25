@@ -1,8 +1,13 @@
+import json
+import os
 import subprocess
+import sys
 from chinesevocablist import VocabList
+from chinesevocablist.models import ExampleSentence
 
 _MANUAL_EDIT_START = '521b4741b8e135642c131350462cfb020a3ef1f3'  # last commit before we started doing manual edits
 _VOCAB_LIST_FILE = 'chinese_vocab_list.yaml'
+_MANUAL_EDIT_CACHE_PATH = '.manual_edit_cache.json'
 
 
 class ManualEdit:
@@ -48,6 +53,21 @@ class ManualEdit:
             self.trad,
             self.defs,
             self.example_sentences)
+    
+    def to_dict(self):
+        return {
+            'trad': self.trad,
+            'defs': self.defs,
+            'example_sentences': [es.to_dict() for es in self.example_sentences],
+        }
+    
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            trad=d['trad'],
+            defs=d['defs'],
+            example_sentences=[ExampleSentence.from_dict(es_d) for es_d in d['example_sentences']])
+
 
 def _get_manual_edits_for_commit(commit):
     # Note: This is slow. We could cache the result if it becomes a problem.
@@ -92,6 +112,15 @@ def get_manual_edits():
         '{}..HEAD'.format(_MANUAL_EDIT_START),
     ]).decode('utf8').splitlines()
 
+    # manual_edit_cache is a dict of commit str -> list of manual edits
+    if os.path.exists(_MANUAL_EDIT_CACHE_PATH):
+        with open(_MANUAL_EDIT_CACHE_PATH) as f:
+            manual_edit_cache = json.load(f)
+            for commit in list(manual_edit_cache.keys()):
+                manual_edit_cache[commit] = [ManualEdit.from_dict(me_str) for me_str in manual_edit_cache[commit]]
+    else:
+        manual_edit_cache = {}
+
     trad_to_edit = {}
     for commit in commits:
         changed_files = subprocess.check_output([
@@ -104,14 +133,26 @@ def get_manual_edits():
         
         if changed_files != [_VOCAB_LIST_FILE]:
             continue
-        
+
+        if commit not in manual_edit_cache:
+            print(
+                'Computing ManualEdits for commit {}. This will be slow but the result will be cached.'.format(commit),
+                file=sys.stderr)
+            manual_edit_cache[commit] = _get_manual_edits_for_commit(commit)
+
         edits = _get_manual_edits_for_commit(commit)
+
         for edit in edits:
             if edit.trad in trad_to_edit:
                 trad_to_edit[edit.trad] = trad_to_edit[edit.trad].merge(edit)
             else:
                 trad_to_edit[edit.trad] = edit
     
+    with open(_MANUAL_EDIT_CACHE_PATH, 'w') as f:
+        for commit in list(manual_edit_cache.keys()):
+            manual_edit_cache[commit] = [me.to_dict() for me in manual_edit_cache[commit]]
+        json.dump(manual_edit_cache, f)
+
     return list(trad_to_edit.values())
 
 
