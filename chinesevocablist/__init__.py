@@ -100,6 +100,11 @@ class VocabList:
     return vocab_list_data.vocab_list
 
   @classmethod
+  def load_from_yaml_str(cls, yaml_str):
+    words = [VocabWord.from_dict(d) for d in yaml.full_load(yaml_str)]
+      return VocabList(words)
+
+  @classmethod
   def load_from_yaml_file(cls, yaml_file_path):
     with open(yaml_file_path, encoding='utf-8') as h:
       words = [VocabWord.from_dict(d) for d in yaml.full_load(h)]
