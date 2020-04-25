@@ -111,12 +111,12 @@ def get_manual_edits():
     
     If there are multiple manual edits, they will be merged, with the later one taking priority.
     """
-    commits = subprocess.check_output([
+    commits = list(reversed(subprocess.check_output([
         'git',
         'log',
         '--pretty=format:%H',
         '{}..HEAD'.format(_MANUAL_EDIT_START),
-    ]).decode('utf8').splitlines()
+    ]).decode('utf8').splitlines()))
 
     # manual_edit_cache is a dict of commit str -> list of manual edits
     if os.path.exists(_MANUAL_EDIT_CACHE_PATH):
