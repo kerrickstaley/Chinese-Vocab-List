@@ -81,7 +81,7 @@ def get_manual_edits():
     """
     Go through commit history and find all manual edits.
 
-    Returns a dict mapping trad to ManualEdit.
+    Returns a list of ManualEdits.
     
     If there are multiple manual edits, they will be merged, with the later one taking priority.
     """
@@ -111,7 +111,5 @@ def get_manual_edits():
                 trad_to_edit[edit.trad] = trad_to_edit[edit.trad].merge(edit)
             else:
                 trad_to_edit[edit.trad] = edit
-
-        trad_to_edit.update({e.trad: e for e in edits})
     
-    return trad_to_edit
+    return list(trad_to_edit.values())
