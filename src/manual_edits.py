@@ -55,18 +55,24 @@ class ManualEdit:
             self.example_sentences)
     
     def to_dict(self):
+        example_sentences = None
+        if self.example_sentences is not None:
+            example_sentences = [es.to_dict() for es in self.example_sentences]
         return {
             'trad': self.trad,
             'defs': self.defs,
-            'example_sentences': [es.to_dict() for es in self.example_sentences],
+            'example_sentences': example_sentences,
         }
     
     @classmethod
     def from_dict(cls, d):
+        example_sentences = None
+        if d['example_sentences'] is not None:
+            example_sentences=[ExampleSentence.from_dict(es_d) for es_d in d['example_sentences']]
         return cls(
             trad=d['trad'],
             defs=d['defs'],
-            example_sentences=[ExampleSentence.from_dict(es_d) for es_d in d['example_sentences']])
+            example_sentences=example_sentences)
 
 
 def _get_manual_edits_for_commit(commit):
