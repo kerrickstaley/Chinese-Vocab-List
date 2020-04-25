@@ -146,7 +146,7 @@ def get_manual_edits():
                 file=sys.stderr)
             manual_edit_cache[commit] = _get_manual_edits_for_commit(commit)
 
-        edits = _get_manual_edits_for_commit(commit)
+        edits = manual_edit_cache[commit]
 
         for edit in edits:
             if edit.trad in trad_to_edit:
