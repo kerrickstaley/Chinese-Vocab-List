@@ -2,7 +2,7 @@ from collections import OrderedDict
 import importlib
 import os.path
 
-import yaml
+from .. import yaml
 
 from .models import Classifier, ExampleSentence
 
