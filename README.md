@@ -15,8 +15,6 @@ There are a few ways to contribute:
 
 If you change `src/` or `contrib_files/`, be sure to run `make chinese_vocab_list.yaml` and check in both your changes and the generated changes to `chinese_vocab_list.yaml`.
 
-If you change `chinese_vocab_list.yaml`, there might be a bit of delay merging your PR because right now I don't have a way to ensure that when someone makes manual changes, they won't be overwritten the next time someone re-generates the list. I'll have to figure out a workflow when we get there.
-
 ## Updating reference_files:
 * `cc_cedict.txt`: Run `curl https://www.mdbg.net/chinese/export/cedict/cedict_1_0_ts_utf-8_mdbg.txt.gz | gunzip > reference_files/cc_cedict.txt`
   * You may need to update contrib_files/preferred_entries.yaml and/or other files in order to handle the update. Run `make` and fix errors until the vocab list builds cleanly.
