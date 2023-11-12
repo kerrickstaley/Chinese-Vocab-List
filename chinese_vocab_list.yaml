@@ -9643,6 +9643,10 @@
   - blank
   - to stay
   example_sentences:
+  - trad: 彷彿我們全都是呆子，什麼都要被管被監察。
+    simp: 仿佛我们全都是呆子，什么都要被管被监察。
+    pinyin: fǎngfú wǒmen quándōu shì dāizi, shénme dōu yào bèi guǎn bèi jiānchá。
+    eng: It’s as if we are all idiots and everything must be controlled and monitored.
   - trad: 我必須要在醫院再呆多長的時間呢？
     simp: 我必须要在医院再呆多长的时间呢？
     pinyin: wǒ bìxū yào zài yīyuàn zài dāi duōzhǎng de shíjiān ne ？
@@ -14892,10 +14896,9 @@
 - trad: 根
   pinyin: gēn
   defs:
+  - classifier for long slender objects, e.g. cigarettes, guitar strings
   - root
   - basis
-  - classifier for long slender objects, e.g. cigarettes, guitar strings
-  - radical (chemistry)
   clfrs:
   - trad: 條
     simp: 条
@@ -17591,21 +17594,21 @@
 - trad: 便
   pinyin: biàn
   defs:
+  - 'equivalent to 就[jiu4]: then'
   - plain
   - informal
   - suitable
   - convenient
   - opportune
   - to urinate or defecate
-  - 'equivalent to 就[jiu4]: then'
   - in that case
   - even if
   - soon afterwards
   example_sentences:
-  - trad: 隨你喜歡隨便吃。
-    simp: 随你喜欢随便吃。
-    pinyin: suí nǐ xǐhuān suíbiàn chī 。
-    eng: Help yourself to whatever you like.
+  - trad: 他一夜之間便從中國的互聯網世界消失了。
+    simp: 他一夜之间便从中国的互联网世界消失了。
+    pinyin: tā yīyèzhījiān biàn cóng zhōngguó de hùliánwǎng shìjiè xiāoshī le。
+    eng: He disappeared from the Chinese internet overnight.
 - trad: 眼鏡
   simp: 眼镜
   pinyin: yǎn jìng
@@ -18167,11 +18170,6 @@
   pinyin: ye
   defs:
   - final particle indicating enthusiasm etc
-  example_sentences:
-  - trad: 耶穌愛你。
-    simp: 耶稣爱你。
-    pinyin: yēsū ài nǐ 。
-    eng: Jesus loves you.
 - trad: 準確
   simp: 准确
   pinyin: zhǔn què
@@ -21073,9 +21071,10 @@
   - to cut; to slice; to carve
   - (math) tangential
   example_sentences:
-  - trad: 你是我的一切。
-    pinyin: nǐ shì wǒ de yīqiè 。
-    eng: You're everything to me.
+  - trad: 如果將發霉的部分切掉，很多奶酪都是可以吃的。
+    simp: 如果将发霉的部分切掉，很多奶酪都是可以吃的。
+    pinyin: rúguǒ jiāng fāméi de bùfèn qiē diào, hěnduō nǎilào dōu shì kěyǐ chī de 。
+    eng: Many cheeses are edible if the moldy parts are cut off.
 - trad: 牆
   simp: 墙
   pinyin: qiáng
@@ -33274,10 +33273,10 @@
   - complacent; frivolous
   - weak; shaky; wobbly
   example_sentences:
-  - trad: 比爾，如果你跟我來，你也會飄。
-    simp: 比尔，如果你跟我来，你也会飘。
-    pinyin: bǐěr ， rúguǒ nǐ gēnwǒlái ， nǐ yě huì piāo 。
-    eng: Bill, if you'll come with me, you'll float, too.
+  - trad: 乳香的煙霧飄過集市。
+    simp: 乳香的烟雾飘过集市。
+    pinyin: rǔxiāng de yānwù piāo guò jíshì。
+    eng: Frankincense smoke floated across the bazaar.
 - trad: 類
   simp: 类
   pinyin: lèi
@@ -36463,14 +36462,11 @@
   simp: 镇
   pinyin: zhèn
   defs:
-  - to press down
-  - to calm
-  - to subdue
-  - to suppress
-  - to guard
-  - garrison
   - small town
+  - to calm
+  - to suppress; to subdue
   - to cool or chill (food or drinks)
+  - to press down
   example_sentences:
   - trad: 這隻狗是這個鎮上最大的狗。
     simp: 这只狗是这个镇上最大的狗。
@@ -36690,13 +36686,10 @@
   - skill
   - technique
   example_sentences:
-  - trad: 小說家說謊並不是不道德的事。其實，謊話說得愈離譜、愈有技巧，就愈會受到公眾和批評家的表揚。
-    simp: 小说家说谎并不是不道德的事。其实，谎话说得愈离谱、愈有技巧，就愈会受到公众和批评家的表扬。
-    pinyin: xiǎoshuōjiā shuōhuǎng bìng búshì bùdàodé de shì 。 qíshí ， huǎnghuà shuō
-      déyù lípǔ 、 yùyǒu jìqiǎo ， jiù yùhuì shòudào gōngzhòng hé pīpíngjiā de biǎoyáng
-      。
-    eng: It's not immoral for a novelist to tell lies. In fact, the bigger the lies,
-      the better lies, and the more the common folks and critics will praise you.
+  - trad: 五個讓你成為記憶冠軍的小技巧
+    simp: 五个让你成为记忆冠军的小技巧
+    pinyin: wǔ gè ràng nǐ chéngwéi jìyì guànjūn de xiǎo jìqiǎo
+    eng: Five tips to become a memory champion
 - trad: 醋
   pinyin: cù
   defs:
@@ -39466,12 +39459,10 @@
   - so-called
   - what is called
   example_sentences:
-  - trad: 她就是你所謂的「年輕媽媽」，但是她的廚藝不錯，最重要的是，她非常關心孩子。
-    simp: 她就是你所谓的「年轻妈妈」，但是她的厨艺不错，最重要的是，她非常关心孩子。
-    pinyin: tā jiùshì nǐ suǒwèi de 「 niánqīng māmā 」 ， dànshì tā de chúyì bùcuò ，
-      zuì zhòngyào de shì ， tā fēicháng guānxīn háizi 。
-    eng: She's what you call a "delinquent mom," but she's good at cooking, and most
-      importantly, she's a really caring parent.
+  - trad: 世界上並沒有所謂完美的句子。
+    simp: 世界上并没有所谓完美的句子。
+    pinyin: shìjiè shàng bìng méiyǒu suǒwèi wánměi de jùzi。
+    eng: There's no such thing as a perfect sentence.
 - trad: 判決
   simp: 判决
   pinyin: pàn jué
@@ -47186,10 +47177,10 @@
   - to give
   - to bestow
   example_sentences:
-  - trad: 靈魂賦予肉體生命。
-    simp: 灵魂赋予肉体生命。
-    pinyin: línghún fùyǔ ròutǐ shēngmìng 。
-    eng: The soul animates the body.
+  - trad: 法律賦予全體女性享有參選和投票權。
+    simp: 法律赋予全体女性享有参选和投票权。
+    pinyin: fǎlǜ fùyǔ quántǐ nǚxìng xiǎngyǒu cān xuǎn hé tóupiào quán 。
+    eng: The law gives all women the right to stand for election and vote.
 - trad: 一路
   pinyin: yī lù
   defs:
