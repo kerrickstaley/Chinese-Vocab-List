@@ -219,6 +219,7 @@
 等到: 等
 办到: 办
 儿: 儿子
+# 记录 and 纪录 are both in HSK 5; the latter seems like a mistake
 纪录: 记录
 # 干嘛 doesn't even appear in the subtlex list :/
 干吗: 干嘛
@@ -614,3 +615,9 @@
 差点:
   - 差
   - 点
+愿:
+  - 愿意
+  - 愿望
+录: 记录
+# 面子 is in HSK 6
+面子: 面

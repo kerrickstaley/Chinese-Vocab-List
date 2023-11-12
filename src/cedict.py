@@ -147,14 +147,14 @@ class Cedict:
   def load(cls):
     """
     Load the dictionary from the text file stored in reference_files/.
-    
+
     :return Cedict:
     """
     return cls(load_cedict_file('reference_files/cc_cedict.txt'))
 
   def __init__(self, words):
     """
-    :param list[CedictWord] words: 
+    :param list[CedictWord] words:
     """
     self.words = words
     self.word_lists_by_trad = defaultdict(list)
@@ -169,7 +169,7 @@ class Cedict:
 
 class CedictWithPreferredEntries(Cedict):
 
-  REFERENCE_REGEX = re.compile('^variant of |^old variant of |^see [^ ]+\[[^\]]+\]$')
+  REFERENCE_REGEX = re.compile('^variant of |^old variant of |^see [^ ]+\[[^\]]+\]$|^used in [^ ]+\[')
 
   @classmethod
   def load(cls):

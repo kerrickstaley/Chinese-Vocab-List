@@ -488,6 +488,7 @@
   pinyin: zan3
 扎:
   pinyin: zha1
+  trad: 扎
 折:
   pinyin: zhe2
 正当:
@@ -644,8 +645,9 @@
   pinyin: zha2
 相:
   pinyin: xiang4
+# TODO: ideally we would also have the fen4 zi3 entry
 分子:
-  trad: 份子
+  pinyin: fen1 zi3
 结:
   pinyin: jie2
 呐:
@@ -695,3 +697,21 @@
   trad: 託
 食:
   pinyin: shi2
+你:
+  trad: 你
+脚:
+  pinyin: jiao3
+好处:
+  pinyin: hao3 chu5
+页:
+  pinyin: ye4
+尝:
+  trad: 嘗
+抢:
+  pinyin: qiang3
+毁:
+  trad: 毀
+圣:
+  trad: 聖
+尿:
+  pinyin: niao4
