@@ -15862,11 +15862,10 @@
     simp: 个
     pinyin: ge4
   example_sentences:
-  - trad: 你做了什麼讓他這些日子用這種態度對待我們？
-    simp: 你做了什么让他这些日子用这种态度对待我们？
-    pinyin: nǐ zuò le shénme ràng tā zhèxiē rìzi yòng zhèzhǒng tàidù duìdài wǒmen
-      ？
-    eng: What do you make of his attitude towards us these days?
+  - trad: 我不知道如何對待孩子。
+    simp: 我不知道如何对待孩子。
+    pinyin: wǒ bù zhīdào rúhé duìdài háizi 。
+    eng: I don't know how to handle children.
 - trad: 自信
   pinyin: zì xìn
   defs:
@@ -44170,6 +44169,11 @@
   - spectacle
   - occasion
   - situation
+  example_sentences:
+  - trad: 美國總統與到訪的德國總理會晤時出現尷尬場面。
+    simp: 美国总统与到访的德国总理会晤时出现尴尬场面。
+    pinyin: měiguó zǒngtǒng yǔ dào fǎng de déguó zǒnglǐ huìwù shí chūxiàn gāngà chǎngmiàn 。
+    eng: There was an embarrassing scene when the US President met with the visiting German Chancellor.
 - trad: 純粹
   simp: 纯粹
   pinyin: chún cuì
@@ -46102,6 +46106,11 @@
   pinyin: yuán shǒu
   defs:
   - head of state
+  example_sentences:
+  - trad: 美中元首將討論美國對中國的技術出口限制。
+    simp: 美中元首将讨论美国对中国的技术出口限制。
+    pinyin: měi zhōng yuánshǒu jiāng tǎolùn měiguó duì zhōngguó de jìshù chūkǒu xiànzhì 。
+    eng: The heads of state of the United States and China will discuss U.S. technology export restrictions to China.
 - trad: 犯人
   pinyin: fàn rén
   defs:
@@ -46671,12 +46680,10 @@
   defs:
   - to make love
   example_sentences:
-  - trad: 即使我們第一次不夠幸運, 我們可以就一直做愛直到我懷孕。
-    simp: 即使我们第一次不够幸运, 我们可以就一直做爱直到我怀孕。
-    pinyin: jíshǐ wǒmen dìyīcì bùgòu xìngyùn ,   wǒmen kěyǐ jiù yìzhí zuòài zhídào
-      wǒ huáiyùn 。
-    eng: Even if we don't get lucky on the first try we can just keep fucking till
-      I get pregnant.
+  - trad: 她懷孕後仍然堅持工作。
+    simp: 她怀孕后仍然坚持工作。
+    pinyin: tā huáiyùn hòu réngrán jiānchí gōngzuò 。
+    eng: She still went to work even after getting pregnant.
 - trad: 以便
   pinyin: yǐ biàn
   defs:
@@ -47462,6 +47469,11 @@
   - lofty
   - refined
   - exquisite
+  example_sentences:
+  - trad: 倫敦高尚住宅區的房市最近開始興旺。
+    simp: 伦敦高尚住宅区的房市最近开始兴旺。
+    pinyin: lúndūn gāoshàng zhùzhái qū de fángshì zuìjìn kāishǐ xīngwàng 。
+    eng: The housing market in London's upscale residential areas has recently begun to boom.
 - trad: 解散
   pinyin: jiě sàn
   defs:
