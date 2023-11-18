@@ -635,3 +635,66 @@
 演:
   - 表演
   - 演出
+双方:
+  - 双
+  - 方
+# 罗 is primarily used in phonetically-translated names, I think
+罗: null
+# 冒 is better learned as a component of other words
+冒: null
+# 查 is better learned as a component of other words
+查: null
+盒: 盒子
+好久:
+  - 好
+  - 久
+# 运 is better learned as a component of other words
+运: null
+日子: 日
+难以: 难
+赌: 赌博
+爱上: 爱
+# 批 is better learned as a component of other words
+批: null
+类: 类型
+远离:
+  - 远
+  - 离
+请问:
+  - 请
+  - 问
+长大:
+  - 长
+  - 大
+排: 排队
+# 灵 is better learned as a component of other words
+灵: null
+# 除 is better learned as a component of other words
+除: null
+生长:
+  - 生活
+  - 长
+直: 直接
+# 系 is better learned as a component of other words
+系: null
+# 折 is better learned as a component of other words
+折: null
+全国:
+  - 完全
+  - 国家
+讲话:
+  - 讲
+  - 说话
+修: 修理
+彼得: null
+麦克: null
+杰克: null
+数: 数字
+# 片 is better learned as a component of other words
+片: null
+手工:
+  - 手
+  - 工作
+级: 级别
+# 明 is better learned as a component of other words
+明: null
