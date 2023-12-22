@@ -721,3 +721,12 @@
   pinyin: dai3
 曲:
   pinyin: qu3
+伙:
+  trad: 夥
+# TODO trad 松 ("pine") is also relevant
+松:
+  trad: 鬆
+拜拜:
+  pinyin: bai2 bai2
+喷:
+  pinyin: pen1

@@ -18,7 +18,7 @@ HSK_LEVEL_TO_RANK = {
   5: 1200 + 1300 / 2,
   6: 2500 + 2500 / 2,
 }
-NUM_WORDS_TO_GENERATE = 4000
+NUM_WORDS_TO_GENERATE = 4500
 
 
 def combine_hsk_subtlex_ranks(hsk_rank, subtlex_rank):
