@@ -158,7 +158,7 @@
 仅仅: 仅
 瞧瞧: 瞧
 猜猜: 猜
-聊聊: 聊
+聊聊: 聊天
 哈: 哈哈
 娃: 娃娃
 说说: 说
@@ -700,7 +700,6 @@
 明: null
 魔: 魔法
 注意力: 注意
-装: 安装
 # 兰 is used primarily in phonetically-translated names, I think
 兰: null
 # 艾 is used in phonetic translation and for surnames
@@ -714,3 +713,65 @@
 考: 考试
 # 蒙 is used in phonetic translation
 蒙: null
+回头:
+  - 回
+  # Curiously, 头 is not in the HSK wordlist but is #308 in Subtlex. I think it deserves to be in the vocab list.
+  - 头
+拳: 拳头
+忍: 忍受
+夸: 夸张
+# 呐 is a sentence-final particle with unclear meaning
+呐: null
+# 咯 is used in phonetic translation / as a final particle with unclear meaning
+咯: null
+# 唔 is a Cantonese word
+唔: null
+# 哟 is an interjection sound / sentence final particle
+哟: null
+# 造 is best learned as a component of other words (there are many)
+造: null
+认: 认识
+# 蒂 is used in phonetic translations
+蒂: null
+聊: 聊天
+编: 编辑
+# 绝 is best learned as a component of other words
+绝: null
+纹: 指纹
+箱: 箱子
+电: null  # best learned as a component of other words
+理: null  # best learned as a component of other words
+烦: 麻烦
+毒:
+  - 病毒
+  - 毒品
+格: null  # best learned as a component of other words
+更加:
+  - 更
+  - 加
+招: null  # best learned as a component of other words
+报: null  # best learned as a component of other words
+托: null  # best learned as a component of other words
+师: 老师
+娘: 姑娘
+型: null  # best learned as a component of other words
+图: null  # best learned as a component of other words
+# 喝酒 is in HSK but I don't think it should have its own entry in our vocab list
+喝酒:
+  - 喝
+  - 酒
+# 可见 is in HSK but I don't think it should have its own entry in our vocab list; you can infer its meaning
+可见:
+  - 可以
+  - 见
+单: null  # best learned as a component of other words
+击: null  # best learned as a component of other words
+何: null  # best learned as a component of other words
+今: 今天
+之内:
+  - 之
+  - 内
+不安:
+  - 不
+  - 安静
+恶: null  # best learned as a component of other words
