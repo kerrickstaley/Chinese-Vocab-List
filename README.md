@@ -22,7 +22,7 @@ If you change `src/` or `contrib_files/`, be sure to run `make chinese_vocab_lis
 ## Publishing to PyPI
 If your name is Kerrick, you can publish the `chinesevocablist` package to PyPI by running these commands from the root of the repo:
 ```
-rm -rf dist/*
+rm -rf dist
 python3 -m build
 python3 -m twine upload dist/*
 ```
