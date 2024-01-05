@@ -775,3 +775,16 @@
   - 不
   - 安静
 恶: null  # best learned as a component of other words
+# 血压 is in HSK but can be inferred from components
+血压:
+  - 血
+  - 压力
+名人:
+  - 有名
+  - 人
+汤姆: null
+也就是说:
+  - 也
+  - 就
+  - 是
+  - 说
